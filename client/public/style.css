@@ -1,0 +1,28 @@
+body{
+ background-image: url('../images/napali-trail.jpg');
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-size: cover;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.flex-fill {
+   flex: 1 1 auto;
+}
+
+ footer {
+   color: white
+ }
+ 
+#footer-content {
+  background-color: black;
+  opacity: 0.4;
+  filter: alpha(opacity=50)
+}
+
+#github-link {
+  color: inherit;
+}
