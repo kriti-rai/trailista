@@ -26,12 +26,12 @@ function Navbar() {
             </div>
           </nav>
           <Switch>
-            <Route path="/" exact component={SearchHikes} />
-            <Route path="/about/" component={About} />
-            <Route path="/user/" component={User} />
-            <Route path="/login/" component={Login} />
-            <Route path="/signup/" component={Register} />
-            <Route path="/explore/" component={HikesContainer} />
+            <Route exact path="/" exact component={SearchHikes} />
+            <Route exact path="/about/" component={About} />
+            <Route exact path="/user/" component={User} />
+            <Route exact path="/login/" component={Login} />
+            <Route exact path="/signup/" component={Register} />
+            <Route exact path="/explore/" component={HikesContainer} />
             <Route component={NoMatch} />
           </Switch>
       </Router>
