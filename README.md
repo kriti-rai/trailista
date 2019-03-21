@@ -1,6 +1,6 @@
 # TRAILISTA
 
-Trailista (*or Trail-lister*) is a React-based app that locates trails per the user's location input. It may also be used to explore popular hikes.
+Trailista (*or Trail-lister*) is a React-based app that locates trails per user's location input. It may also be used to explore popular hikes.
 
 Things you may want to cover:
 
