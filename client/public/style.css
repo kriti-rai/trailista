@@ -3,8 +3,7 @@ body {
  background-repeat: no-repeat;
  background-attachment: fixed;
  background-size: cover;
- opacity: 0.7;
- filter: alpha(opacity=10)
+ opacity: 0.8;
  min-height: 100vh;
 }
 
@@ -18,8 +17,7 @@ body {
 
 #footer-content {
   background-color: black;
-  opacity: 1;
-  filter: alpha(opacity=50)
+  opacity: 0.6;
 }
 
 #github-link {
