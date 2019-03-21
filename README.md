@@ -1,6 +1,6 @@
 # README
 
-ConcertSpotter is a React-based app that spots concerts based on the location user sets.
+Trailista (*or Trail-lister*) is a React-based app that locates trails per the user's location input. It may also be used to explore popular hikes.
 
 Things you may want to cover:
 
