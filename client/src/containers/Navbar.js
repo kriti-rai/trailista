@@ -8,10 +8,6 @@ import SearchHikes from '.././components/Hikes/SearchHikes';
 import HikesContainer from './HikesContainer';
 
 
-function NoMatch() {
-  return <h2>404 Error - Page not found</h2>;
-}
-
 function Navbar() {
   return (
     <div>
@@ -32,7 +28,7 @@ function Navbar() {
             <Route exact path="/login/" component={Login} />
             <Route exact path="/signup/" component={Register} />
             <Route exact path="/explore/" component={HikesContainer} />
-            <Route component={NoMatch} />
+            <Route render={() => <h2 class="400-error">404 Error - Page not found</h2>} />
           </Switch>
       </Router>
     </div>
