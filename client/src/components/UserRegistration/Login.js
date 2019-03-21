@@ -9,10 +9,10 @@ function Login() {
           <div className="card-body">
             <form className='login-form'>
               <div className="input-group form-group">
-                  <input type="text" className="form-control" placeHolder="Username"/>
+                  <input type="text" className="form-control" placeholder="Username"/>
               </div>
                 <div className="input-group form-group">
-                  <input type="password" className="form-control" placeHolder="Password"/>
+                  <input type="password" className="form-control" placeholder="Password"/>
                 </div>
                 <div className="form-group">
                   <input className="button login_btn" type="submit" value="Login"/>
