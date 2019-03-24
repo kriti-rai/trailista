@@ -4,7 +4,7 @@ import Register from '.././components/UserRegistration/SignUp';
 import Login from '.././components/UserRegistration/Login';
 import About from '.././components/About';
 import User from '.././components/User';
-import SearchHikes from '.././components/Hikes/SearchHikes';
+import Home from '.././components/Home';
 import HikesContainer from './HikesContainer';
 
 
@@ -22,7 +22,7 @@ function Navbar() {
             </div>
           </nav>
           <Switch>
-            <Route exact path="/" exact component={SearchHikes} />
+            <Route exact path="/" exact component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/user" component={User} />
             <Route exact path="/login" component={Login} />
