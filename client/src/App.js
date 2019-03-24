@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles/App.css';
+import './styles/HikeCard.css';
 import Navbar from './containers/Navbar';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -15,5 +16,3 @@ class App extends Component {
 }
 
 export default App;
-
-//remove logo
