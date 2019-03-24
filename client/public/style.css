@@ -1,9 +1,8 @@
-body {
+#home {
  background-image: url('../images/napali-trail.jpg');
  background-repeat: no-repeat;
  background-attachment: fixed;
  background-size: cover;
- opacity: 0.8;
  min-height: 100vh;
 }
 
