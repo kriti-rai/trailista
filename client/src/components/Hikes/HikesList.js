@@ -4,9 +4,9 @@ import HikeCard from './HikeCard';
 
 function HikesList(props) {
   return (
-    <ul>
+    <div>
       { props.hikes.map((hike,id) => <HikeCard key={ id } hike={ hike }/>) }
-    </ul>
+    </div>
   )
 }
 
