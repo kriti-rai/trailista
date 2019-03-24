@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Register extend Component {
+class Register extends Component {
   constructor() {
     super();
     this.state = {
@@ -18,6 +18,11 @@ class Register extend Component {
     })
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('you hit submit') //create user
+  }
+
   render() {
     return (
       <div className="container">
@@ -25,7 +30,7 @@ class Register extend Component {
           <div className="card">
             <h3 className="card-header">Register</h3>
             <div className="card-body">
-              <form className='login-form'>
+              <form className='login-form' onSubmit={ this.handleSubmit }>
                 <div className="input-group form-group">
                     <input type="text" name="username" value={ this.state.username } className="form-control" placeholder="Username"  onChange={ this.handleChange } />
                 </div>
