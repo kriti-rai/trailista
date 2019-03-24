@@ -1,9 +1,13 @@
-// import Hike from './Hike';
+import React from 'react';
+import Hike from './Hike';
 
-const API_URL = process.env.REACT_APP_API_URL;
 
-function HikesList() {
-  return ""
+function HikesList(props) {
+  return (
+    <ul>
+      { props.hikes.map((hike,id) => <Hike key={ id } hike={ hike }/>) }
+    </ul>
+  )
 }
 
 export default HikesList;
