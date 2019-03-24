@@ -1,11 +1,11 @@
 import React from 'react';
-import Hike from './Hike';
+import HikeCard from './HikeCard';
 
 
 function HikesList(props) {
   return (
     <ul>
-      { props.hikes.map((hike,id) => <Hike key={ id } hike={ hike }/>) }
+      { props.hikes.map((hike,id) => <HikeCard key={ id } hike={ hike }/>) }
     </ul>
   )
 }
