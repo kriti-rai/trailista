@@ -1,4 +1,4 @@
-class Api::HikesController < ApplicationController
+class Api::UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
@@ -8,6 +8,11 @@ class Api::HikesController < ApplicationController
     else
       render json: user.errors, status: 400
     end
+  end
+
+  def show
+    user = User.find(params[:id])
+    render json: user
   end
 
   private
