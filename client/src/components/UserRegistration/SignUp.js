@@ -11,7 +11,7 @@ class Register extend Component {
       password: "",
     }
   }
-  
+
   render() {
     return (
       <div className="container">
@@ -21,19 +21,19 @@ class Register extend Component {
             <div className="card-body">
               <form className='login-form'>
                 <div className="input-group form-group">
-                    <input type="text" className="form-control" placeholder="Username"/>
+                    <input type="text" name="username" value={ this.state.username } className="form-control" placeholder="Username"/>
                 </div>
                 <div className="input-group form-group">
-                    <input type="text" className="form-control" placeholder="First Name"/>
+                    <input type="text" name="firstName" value={ this.state.firstName } className="form-control" placeholder="First Name"/>
                 </div>
                 <div className="input-group form-group">
-                    <input type="text" className="form-control" placeholder="Last Name"/>
+                    <input type="text" name="lastName" value={ this.state.lastName } className="form-control" placeholder="Last Name"/>
                 </div>
                 <div className="input-group form-group">
-                    <input type="text" className="form-control" placeholder="Email Address"/>
+                    <input type="text" name="email" value={ this.state.email } className="form-control" placeholder="Email Address"/>
                 </div>
                   <div className="input-group form-group">
-                    <input type="password" className="form-control" placeholder="Password"/>
+                    <input type="password" name="password" value={ this.state.password } className="form-control" placeholder="Password"/>
                   </div>
                   <div className="form-group">
                     <input className="button login_btn" type="submit" value="Sign Up"/>
