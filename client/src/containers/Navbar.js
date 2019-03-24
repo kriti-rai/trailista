@@ -23,11 +23,11 @@ function Navbar() {
           </nav>
           <Switch>
             <Route exact path="/" exact component={SearchHikes} />
-            <Route exact path="/about/" component={About} />
-            <Route exact path="/user/" component={User} />
-            <Route exact path="/login/" component={Login} />
-            <Route exact path="/signup/" component={Register} />
-            <Route exact path="/explore/" component={HikesContainer} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/user" component={User} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Register} />
+            <Route exact path="/explore" component={HikesContainer} />
             <Route render={() => <h2 class="400-error">404 Error - Page not found</h2>} />
           </Switch>
       </Router>
