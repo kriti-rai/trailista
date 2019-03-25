@@ -19,7 +19,6 @@ class App extends Component {
     hikes: []
   }
 
-
   componentDidMount() {
     fetch(`${API_URL}/hikes`)
       .then(resp => resp.json())
@@ -37,6 +36,7 @@ class App extends Component {
               <Route exact path="/user" component={User} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Register} />
+              <Route path="/hikes/:hikeId" render={ routerProps => <Hike {...routerProps} hikes={ this.state.hikes }/> } />
               <Route path="/hikes" render={ routerProps => <HikesContainer {...routerProps} hikes={ this.state.hikes }/> } />
               <Route render={() => <h2 class="400-error">404 Error - Page not found</h2>} />
             </Switch>
