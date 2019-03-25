@@ -5,8 +5,9 @@ function HikeCard(props) {
   return (
     <div className="hike-card">
       <h5>{ hike.title }</h5>
-      <p>{ hike.difficulty }</p>
-      <p>{ hike.ratings }</p>
+      <p>Difficult: { hike.difficulty }</p>
+      <p>Rating: { hike.ratings}</p>
+      <img className="hike-card-image" src= {hike.image} />
     </div>
   )
 }
