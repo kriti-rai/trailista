@@ -1,16 +1,15 @@
-import React, {Component} from 'react';
+import React from 'react';
 import SearchHikes from '.././components/Hikes/SearchHikes';
 import HikesList from '.././components/Hikes/HikesList';
+import { connect } from 'react-redux';
 
-class HikesContainer extends Component {
-  render() {
+const HikesContainer = (props) => {
     return (
       <div>
         <SearchHikes />
-        <HikesList />
+        <HikesList hikes={ props.hikes }/>
       </div>
     )
-  }
 };
 
 export default HikesContainer;
