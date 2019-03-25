@@ -1,11 +1,11 @@
 import React from 'react';
 import HikeCard from './HikeCard';
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-function HikesList(props) {
+function HikesList({ hikes }) {
   return (
     <div>
-      { props.hikes.map((hike, id) => <Link to={`/hikes/${ id }`}><HikeCard key={ id } hike={ hike }/></Link>) }
+      { hikes.map((hike, id) => <NavLink to={`/hikes/${ id }`} key={ id }><HikeCard hike={ hike }/></NavLink>) }
     </div>
   )
 }
