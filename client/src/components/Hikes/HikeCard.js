@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Hike from './Hike';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-function HikeCard(props) {
-  const hike = props.hike
+const HikeCard = ({ hike }) => {
   return (
     <div className="hike-card">
-      <h5>{ hike.title }</h5>
-      <p>Difficult: { hike.difficulty }</p>
-      <p>Rating: { hike.ratings}</p>
-      <img className="hike-card-image" src= {hike.image} />
+      <h5>{  hike.title }</h5>
+      <p><small>Difficult: {  hike.difficulty }</small></p>
+      <p><small>Rating: {  hike.ratings}</small></p>
+      <img className="hike-card-image" src= { hike.image} />
     </div>
   )
 }
