@@ -7,7 +7,7 @@ const HikesContainer = (props) => {
     return (
       <div>
         <SearchHikes />
-        <HikesList hikes={ props.hikes }/>
+        <HikesList hikes={ props.hikes } url={ props.match.url}/>
       </div>
     )
 };
