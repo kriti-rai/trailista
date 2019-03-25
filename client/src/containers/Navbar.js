@@ -14,7 +14,7 @@ function Navbar() {
       <Router>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
-                <Link to='/explore' className="nav-link">Explore</Link>
+                <Link to='/hikes' className="nav-link">Explore</Link>
                 <Link to='/about' className="nav-link">About</Link>
                 <h3><Link to='/' className="nav-link">MyApp</Link></h3>
                 <Link to='/login' className="nav-link">Log in</Link>
@@ -27,7 +27,7 @@ function Navbar() {
             <Route exact path="/user" component={User} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Register} />
-            <Route exact path="/explore" component={HikesContainer} />
+            <Route exact path="/hikes" component={HikesContainer} />
             <Route render={() => <h2 class="400-error">404 Error - Page not found</h2>} />
           </Switch>
       </Router>
