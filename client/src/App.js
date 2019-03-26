@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './styles/App.css';
-import './styles/HikeCard.css';
+import './styles/app.css';
+import './styles/hikeard.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Navbar from './containers/Navbar';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -16,7 +16,7 @@ import { connect } from 'react-redux'
 
 
 class App extends Component {
-  
+
   componentDidMount() {
     this.props.fetchHikes();
   }
