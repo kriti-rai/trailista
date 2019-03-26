@@ -3,7 +3,7 @@ function hikeReducer(state=[], action) {
     case 'LOADING_HIKES':
       return state;
     case 'FETCH_HIKES':
-      return action.hikes.data
+      return action.hikes.data;
     default:
       return state;
   }
