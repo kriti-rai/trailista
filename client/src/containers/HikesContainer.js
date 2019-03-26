@@ -6,7 +6,7 @@ import Hike from '.././components/Hikes/Hike';
 
 const HikesContainer = (props) => {
     return (
-      <div>
+      <div className="hikes-container">
         <SearchHikes />
         <HikesList hikes={ props.hikes } />
         <Route path={`${props.match.url}/:hikeId`} render={(routerProps) => <Hike {...routerProps} hikes={ props.hikes } /> }/>
