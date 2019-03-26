@@ -11,18 +11,14 @@ import User from './components/User';
 import Home from './components/Home';
 import HikesContainer from './containers/HikesContainer';
 import Hike from './components/Hikes/Hike';
+import { fetchHikes } from './actions/hikeActions';
+import { connect } from 'react-redux'
 
-const API_URL = process.env.REACT_APP_API_URL;
 
 class App extends Component {
-  state = {
-    hikes: []
-  }
-
+  
   componentDidMount() {
-    fetch(`${API_URL}/hikes`)
-      .then(resp => resp.json())
-      .then(hikes => this.setState({ hikes }))
+    this.props.fetchHikes();
   }
 
   render() {
@@ -36,8 +32,8 @@ class App extends Component {
               <Route exact path="/user" component={User} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Register} />
-              <Route path="/hikes/:hikeId" render={ routerProps => <Hike {...routerProps} hikes={ this.state.hikes }/> } />
-              <Route path="/hikes" render={ routerProps => <HikesContainer {...routerProps} hikes={ this.state.hikes }/> } />
+              <Route path="/hikes/:hikeId" render={ routerProps => <Hike {...routerProps} hikes={ this.props.hikes }/> } />
+              <Route path="/hikes" render={ routerProps => <HikesContainer {...routerProps} hikes={ this.props.hikes }/> } />
               <Route render={() => <h2 class="400-error">404 Error - Page not found</h2>} />
             </Switch>
         </Router>
@@ -46,4 +42,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(state => ({ hikes: state.hikes }), { fetchHikes })(App);
