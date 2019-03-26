@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './styles/app.css';
-import './styles/hikeard.css';
+import './styles/hikecard.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Navbar from './containers/Navbar';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
