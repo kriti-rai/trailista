@@ -25,3 +25,10 @@
   margin-top: 25px;
   margin-bottom: 25px;
 }
+
+.hike-overview {
+  padding-right: 35px;
+  padding-left: 35px;
+  display: flex;
+  justify-content: center;
+}
