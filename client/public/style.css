@@ -1,23 +1,37 @@
-#home {
- background-image: url('../images/napali-trail.jpg');
- background-repeat: no-repeat;
- background-attachment: fixed;
- background-size: cover;
- min-height: 100vh;
+* {
+ box-sizing: border-box;
 }
 
-.flex-fill {
-   flex: 1 1 auto;
+*:before,
+*:after {
+ box-sizing: border-box;
 }
 
- footer {
-   color: white
- }
+html,
+body {
+ height: 100%;
+ position: relative;
+}
 
-#footer-content {
+.main-container {
+ min-height: 100vh; /* will cover the 100% of viewport */
+ overflow: hidden;
+ display: block;
+ position: relative;
+ padding-bottom: 45px; /* height of your footer */
+}
+
+#footer {
+ position: absolute;
+ bottom: 0;
+ width: 100%;
+ color: black;
+}
+
+/* #footer-content {
   background-color: black;
   opacity: 0.6;
-}
+} */
 
 #github-link {
   color: inherit;
