@@ -4,8 +4,6 @@ import HikesList from '.././components/Hikes/HikesList';
 import { Route } from 'react-router-dom'
 import Hike from '.././components/Hikes/Hike';
 
-import { connect } from 'react-redux';
-
 const HikesContainer = (props) => {
     return (
       <div>
