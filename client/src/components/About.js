@@ -2,7 +2,7 @@ import React from 'react';
 
 function About() {
   return (
-    <div class="about">
+    <div className="about">
       <div className="container">
         <div className="d-flex justify-content-center h-100">
           <div className='card'>
