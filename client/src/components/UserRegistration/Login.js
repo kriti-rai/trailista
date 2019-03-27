@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
+import { loginUser } from '../.././actions/userActions';
 
 class Login extends Component {
   constructor() {
@@ -18,27 +19,30 @@ class Login extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log("you hit submit")
+    const data =  this.state;
+    this.props.loginUser(data);
   }
 
   render() {
     return (
-      <div className="container">
-        <div className="d-flex justify-content-center h-100">
-          <div className="card">
-            <h3 className="card-header">Login</h3>
-            <div className="card-body">
-              <form className='login-form' onSubmit={ this.handleSubmit }>
-                <div className="input-group form-group">
-                    <input type="text" name="username" value={ this.state.username } className="form-control" placeholder="Username" onChange={ this.handleChange } />
-                </div>
-                <div className="input-group form-group">
-                  <input type="password" name="password" value={ this.state.password } className="form-control" placeholder="Password" onChange={ this.handleChange } />
-                </div>
-                <div className="form-group">
-                  <input className="button login_btn" type="submit" value="Login"/>
-                </div>
-              </form>
+      <div className="login">
+        <div className="container">
+          <div className="d-flex justify-content-center h-100">
+            <div className="card">
+              <h3 className="card-header">Login</h3>
+              <div className="card-body">
+                <form className='login-form' onSubmit={ this.handleSubmit }>
+                  <div className="input-group form-group">
+                      <input type="text" name="username" value={ this.state.username } className="form-control" placeholder="Username" onChange={ this.handleChange } />
+                  </div>
+                  <div className="input-group form-group">
+                    <input type="password" name="password" value={ this.state.password } className="form-control" placeholder="Password" onChange={ this.handleChange } />
+                  </div>
+                  <div className="form-group">
+                    <input className="button login_btn" type="submit" value="Login"/>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -47,4 +51,4 @@ class Login extends Component {
   }
 };
 
-export default Login;
+export default connect(null, { loginUser })(Login);
