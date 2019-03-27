@@ -9,11 +9,4 @@ class Api::SessionsController < ApplicationController
     end
   end
 
-
-  private
-
-  def auth_params
-    params.require(:auth).permit(:username, :password)
-  end
-
 end
