@@ -1,11 +1,12 @@
 class Api::UsersController < ApplicationController
   skip_before_action :authenticate
-  
+
   def create
     user = User.new(user_params)
 
     if user.valid? && user.save
-      render json: user
+      jwt = Auth.issue({user: user.id})
+      render json: {jwt: jwt}
     else
       render json: user.errors, status: 400
     end
