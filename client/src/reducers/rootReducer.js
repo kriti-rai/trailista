@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import hikeReducer from './hikeReducer';
+import hikesReducer from './hikesReducer';
+import userReducer from './userReducer';
 
 const rootReducer = combineReducers({
-  hikes: hikeReducer
+  hikes: hikesReducer,
+  user: userReducer,
 });
 
 export default rootReducer;
