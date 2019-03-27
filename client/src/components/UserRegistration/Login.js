@@ -20,7 +20,7 @@ class Login extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const data =  this.state;
-    this.props.loginUser(data);
+    this.props.loginUser(data,() => this.props.history.push('/'));
   }
 
   render() {

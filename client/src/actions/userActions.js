@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const baseUrl = "http://localhost:3001/api";
 
-export function loginUser(user) {
+export function loginUser(user, callback) {
   return (dispatch) => {
     dispatch({ type: "LOADING_USER_INFO" })
     return axios.post(`${baseUrl}/sessions`, user)
@@ -14,6 +14,7 @@ export function loginUser(user) {
           type: 'AUTHENTICATE_USER',
           payload: response.data
         })
+        callback()
       })
       // .catch(error => {
       //   dispatch({ type: 'SHOW_ERROR', message: error.response.data.error})
