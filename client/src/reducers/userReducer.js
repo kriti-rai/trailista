@@ -3,7 +3,7 @@ function userReducer(state=[{logged_in: "false", token: ""}], action) {
     case 'LOADING_USER_INFO':
       return state;
     case 'AUTHENTICATE_USER':
-      return [...state, logged_in: "true", token: action.payload.jwt;
+      return [...state, {logged_in: "true", token: action.payload.jwt}];
     default:
       return state;
   }
