@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { registerUser } from '../.././actions/userActions';
+import { signup } from '../.././actions/userActions';
 
 class Register extends Component {
   constructor() {
@@ -23,7 +23,7 @@ class Register extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const data =  this.state;
-    this.props.registerUser(data, () => this.props.history.push('/'));
+    this.props.signup(data, () => this.props.history.push('/'));
   }
 
   render() {
@@ -63,4 +63,4 @@ class Register extends Component {
   }
 };
 
-export default connect(null, { registerUser })(Register);
+export default connect(null, { signup })(Register);
