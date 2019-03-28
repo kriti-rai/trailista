@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
   before_action :authenticate
+  include ActionController::Cookies
 
   def logged_in?
    !!current_user
@@ -7,7 +8,7 @@ class ApplicationController < ActionController::API
 
   def current_user
    if auth_present?
-     user = User.find(auth["user"])
+     user = User.find(auth["username"])
      if user
        @current_user ||= user
      end
@@ -20,16 +21,16 @@ class ApplicationController < ActionController::API
 
   private
 
-  def token
-   request.env["HTTP_AUTHORIZATION"].scan(/Bearer(.*)$/).flatten.last
-  end
+    def token
+     request.env["HTTP_AUTHORIZATION"].scan(/Bearer(.*)$/).flatten.last
+    end
 
-  def auth
-   Auth.decode(token)
-  end
+    def auth
+     Auth.decode(token)
+    end
 
-  def auth_present?
-   !!request.env.fetch("HTTP_AUTHORIZATION", "").scan(/Bearer/).flatten.first
-  end
+    def auth_present?
+      !!request.env.fetch("HTTP_AUTHORIZATION", "").scan(/Bearer/).flatten.first
+    end
 
 end
