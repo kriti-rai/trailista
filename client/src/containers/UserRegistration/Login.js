@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loginUser } from '../.././actions/userActions';
+import { login } from '../.././actions/userActions';
 
 class Login extends Component {
   constructor() {
@@ -20,7 +20,7 @@ class Login extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const data =  this.state;
-    this.props.loginUser(data, () => this.props.history.push('/'));
+    this.props.login(data, () => this.props.history.push('/'));
   }
 
   render() {
@@ -51,4 +51,4 @@ class Login extends Component {
   }
 };
 
-export default connect(null, { loginUser })(Login);
+export default connect(null, { login })(Login);
