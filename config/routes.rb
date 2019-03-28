@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   namespace :api do
     resources :hikes, only: [:index]
     resources :users
-    resources :sessions, only: [:create, :destroy]
-    post 'user_token' => 'user_token#create'
+    resources :sessions, only: [:create]
+    post '/logout' => 'sessions#logout'
   end
 
 end
