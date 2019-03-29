@@ -8,7 +8,7 @@ class ApplicationController < ActionController::API
 
   def current_user
    if auth_present?
-     user = User.find(auth["username"])
+     user = User.find(auth["user"])
      if user
        @current_user ||= user
      end
