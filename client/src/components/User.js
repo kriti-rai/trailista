@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
+import { fetchCurrentUser } from '.././actions/userActions';
 
-function User() {
-  return <h2>User Profile</h2>;
+class User extends Component {
+  constructor() {
+    super();
+  }
+
+  componentDidMount() {
+    this.props.fetchCurrentUser()
+  }
+
+  render() {
+    // debugger
+    return (
+      <>
+      <h2>User Profile</h2>
+      </>
+  )}
 };
 
-export default User;
+export default connect(null, { fetchCurrentUser })(User);
