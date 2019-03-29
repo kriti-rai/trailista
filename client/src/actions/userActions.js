@@ -7,7 +7,6 @@ export function login(user, callback) {
     dispatch({ type: "LOADING_USER_INFO" })
     return axios.post(`${baseUrl}/sessions`, user)
       .then(response => {
-        console.log(response)
         localStorage.setItem("logged_in", 'true')
         localStorage.setItem("jwt", response.data.jwt)
         dispatch({
@@ -28,7 +27,6 @@ export function signup(user, callback) {
     dispatch({ type: "LOADING_USER_INFO" })
     return axios.post(`${baseUrl}/users`, user)
       .then(response => {
-        console.log(response)
         localStorage.setItem("logged_in", 'true')
         localStorage.setItem("jwt", response.data.jwt)
         dispatch({
