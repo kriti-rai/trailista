@@ -36,7 +36,7 @@ class App extends Component {
               <Route exact path="/user" component={User} />
               <Route path="/hikes/:hikeId" render={ routerProps => <Hike {...routerProps} hikes={ this.props.hikes }/> } />
               <Route path="/hikes" render={ routerProps => <HikesContainer {...routerProps} hikes={ this.props.hikes }/> } />
-              <Route path="/" render={ props => {
+              <Route path="/logout" render={ props => {
                 this.props.logout()
                 return <Redirect to = '/' />
               }} />
