@@ -10,7 +10,7 @@ class Api::SessionsController < ApplicationController
   end
 
   def logout
-    binding.pry
+    # binding.pry
     cookies.delete(:jwt)
     render json: { user: 'removed' }, status: 200
   end
