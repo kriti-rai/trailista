@@ -14,26 +14,28 @@ import Hike from './components/Hikes/Hike';
 import { fetchHikes } from './actions/hikeActions';
 import { connect } from 'react-redux';
 import { logout } from './actions/userActions';
+import { fetchCurrentUser } from './actions/userActions';
 
 class App extends Component {
-  state = { logged_in: ""}
+  state = { currentUser: null }
 
   componentDidMount() {
     this.props.fetchHikes();
   }
 
   render() {
+    // debugger
     return (
       <div className="App">
         <Router>
-          <Navbar logged_in={ this.props.logged_in }/>
+          <Navbar logged_in={ this.props.logged_in } currentUser={this.state.currentUser}/>
             <Switch>
               <Route exact path="/" exact component={Home} />
               <Route exact path="/about" component={About} />
-              <Route exact path="/user" component={User} />
+              <Route exact path="/user" render={ routerProps => <User fetchCurrentUser={ this.props.fetchCurrentUser } token={ this.props.token }/>} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Register} />
-              <Route exact path="/user" component={User} />
+              <Route path="/user" component={User } />
               <Route path="/hikes/:hikeId" render={ routerProps => <Hike {...routerProps} hikes={ this.props.hikes }/> } />
               <Route path="/hikes" render={ routerProps => <HikesContainer {...routerProps} hikes={ this.props.hikes }/> } />
               <Route path="/logout" render={ props => {
@@ -51,8 +53,9 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
       hikes: state.hikes,
-      logged_in: state.user.logged_in
+      logged_in: state.user.logged_in,
+      token: state.user.token
     }
 }
 
-export default connect(mapStateToProps, { fetchHikes, logout })(App);
+export default connect(mapStateToProps, { fetchHikes, logout, fetchCurrentUser })(App);
