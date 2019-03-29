@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  skip_before_action :authenticate
+  skip_before_action :authenticate, only: [:create]
 
   def create
     user = User.new(user_params)
@@ -13,7 +13,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    user = User.find(params[:username])
+    user = @current_user
     render json: user
   end
 
@@ -22,5 +22,11 @@ class Api::UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :email, :password_digest, :firstname, :lastname)
   end
+
+  # def authenticate
+  #   authenticate_or_request_with_http_token do |token, options|
+  #     User.find_by(auth_token: token)
+  #   end
+  # end
 
 end
