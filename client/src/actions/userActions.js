@@ -64,14 +64,11 @@ export function logout() {
 export function fetchCurrentUser(token) {
   return (dispatch) => {
     dispatch({ type: "LOADING_USER_INFO" })
-
     if (token) {
-      config['headers']['Authorization'] = 'Bearer ' + token
+      config['headers']['Authorization'] = 'Bearer' + token
     }
-    
     return axios.get(`${baseUrl}/show`, config)
       .then(response => {
-        console.log(response)
         dispatch({
           type: 'SHOW_USER',
           payload: response.data
