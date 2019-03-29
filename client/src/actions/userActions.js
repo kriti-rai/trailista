@@ -2,6 +2,10 @@ import axios from 'axios';
 
 const baseUrl = "http://localhost:3001/api";
 
+let config = {
+  headers: {}
+};
+
 export function login(user, callback) {
   return (dispatch) => {
     dispatch({ type: "LOADING_USER_INFO" })
@@ -46,7 +50,6 @@ export function logout() {
     localStorage.removeItem('jwt')
     localStorage.removeItem('logged_in')
   }
-
   return (dispatch) => {
     return axios.post(`${baseUrl}/logout`)
       .then(response => {
@@ -58,11 +61,17 @@ export function logout() {
     }
 }
 
-export function fetchUser(username) {
+export function fetchCurrentUser(token) {
   return (dispatch) => {
     dispatch({ type: "LOADING_USER_INFO" })
-    return axios.get(`${baseUrl}/users/${username}`)
+
+    if (token) {
+      config['headers']['Authorization'] = 'Bearer ' + token
+    }
+    
+    return axios.get(`${baseUrl}/show`, config)
       .then(response => {
+        console.log(response)
         dispatch({
           type: 'SHOW_USER',
           payload: response.data
