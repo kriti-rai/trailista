@@ -32,10 +32,9 @@ class App extends Component {
             <Switch>
               <Route exact path="/" exact component={Home} />
               <Route exact path="/about" component={About} />
-              <Route exact path="/user" render={ routerProps => <User fetchCurrentUser={ this.props.fetchCurrentUser } token={ this.props.token }/>} />
+              <Route exact path="/user" render={ routerProps => <User fetchCurrentUser={ this.props.fetchCurrentUser } user={ this.props.user }/>} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Register} />
-              <Route path="/user" component={User } />
               <Route path="/hikes/:hikeId" render={ routerProps => <Hike {...routerProps} hikes={ this.props.hikes }/> } />
               <Route path="/hikes" render={ routerProps => <HikesContainer {...routerProps} hikes={ this.props.hikes }/> } />
               <Route path="/logout" render={ props => {
@@ -54,7 +53,8 @@ const mapStateToProps = (state) => {
   return {
       hikes: state.hikes,
       logged_in: state.user.logged_in,
-      token: state.user.token
+      token: state.user.token,
+      user: state.user.user
     }
 }
 
