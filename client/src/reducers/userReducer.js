@@ -8,7 +8,7 @@ function userReducer(state={logged_in: "false", token: ""}, action) {
       } else {
         return {logged_in: "true", token: action.payload.jwt};
       }
-    case 'SHOW_USER':
+    case 'FETCH_USER':
       debugger
       let user = {
         username: action.payload.username,
