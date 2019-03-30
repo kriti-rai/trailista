@@ -10,7 +10,7 @@ class Register extends Component {
       firstname: "",
       lastname: "",
       email: "",
-      password_digest: "",
+      password: ""
     }
   }
 
@@ -48,7 +48,7 @@ class Register extends Component {
                       <input type="text" name="email" value={ this.state.email } className="form-control" placeholder="Email Address" onChange={ this.handleChange } />
                   </div>
                     <div className="input-group form-group">
-                      <input type="password" name="password_digest" value={ this.state.password_digest } className="form-control" placeholder="Password" onChange={ this.handleChange } />
+                      <input type="password" name="password" value={ this.state.password } className="form-control" placeholder="Password" onChange={ this.handleChange } />
                     </div>
                     <div className="form-group">
                       <input className="button login_btn" type="submit" value="Sign Up"/>
