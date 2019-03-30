@@ -70,7 +70,7 @@ export function fetchCurrentUser(token) {
     return axios.get(`${baseUrl}/show`, config)
       .then(response => {
         dispatch({
-          type: 'SHOW_USER',
+          type: 'FETCH_USER',
           payload: response.data
         })
       })
