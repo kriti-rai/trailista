@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Permanent+Marker')
+
 .App {
   text-align: center;
 }
@@ -26,19 +28,6 @@
   }
 }
 
-#searchbox {
-  min-width: 65vw;
-  float: none;
-  text-align: center;
-  opacity: 0.8;
-}
-
-.search-form {
-  float: none;
-  padding: 245px 240px;
-}
-
-
 .card {
 height: auto;
 margin-top: 100px;
@@ -55,6 +44,15 @@ align-content: center;
 h3.card-header {
   color: white;
   text-align: center;
+}
+
+/* LOGIN */
+.login {
+ background-image: url('.././images/joshua.jpg');
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-size: cover;
+ min-height: 100vh;
 }
 
 .login-form {
@@ -76,4 +74,60 @@ h3.card-header {
 .login_btn:hover{
 color: black;
 background-color: white;
+}
+
+/* SIGNUP */
+.signup {
+ background-image: url('.././images/jomsom.jpg');
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-size: cover;
+ min-height: 100vh;
+}
+
+/* HOME */
+.home-container {
+ background-image: url('.././images/napali-trail.jpg');
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-size: cover;
+ min-height: 100vh;
+}
+
+.welcome-msg {
+  float: none;
+  font-size: 80px;
+  font-weight: 900;
+  padding-top: 80px;
+  white-space: nowrap;
+  letter-spacing: .1em;
+  font-family: 'Permanent Marker', cursive;
+  padding: 230px 240px 0 285px;
+  background: salmon;
+  opacity: 0.7;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.search-form {
+  float: none;
+  padding: 30px 395px;
+}
+
+#searchbox {
+  min-width: 40vw;
+  float: none;
+  text-align: center;
+  opacity: 0.7;
+}
+
+
+/*ABOUT */
+.about {
+ background-image: url('.././images/grandcanyon.jpg');
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-size: cover;
+ min-height: 100vh;
 }
