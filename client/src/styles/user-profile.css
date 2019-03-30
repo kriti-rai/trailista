@@ -3,3 +3,12 @@ img.profile-pic {
   height: 200px;
   border-radius: 50%;
 }
+
+.profile-container {
+  margin-top: 35px;
+  margin-bottom: 25px;
+}
+
+.user-data {
+  margin-top: 15px;
+}
