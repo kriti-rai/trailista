@@ -1,4 +1,4 @@
-function userReducer(state={logged_in: "false", token: ""}, action) {
+function userReducer(state={logged_in: "false", token: "", user: {}}, action) {
   switch (action.type) {
     case 'LOADING_USER_INFO':
       return state;
@@ -6,10 +6,9 @@ function userReducer(state={logged_in: "false", token: ""}, action) {
       if (!action.payload.hasOwnProperty('jwt')) {
         return state;
       } else {
-        return {logged_in: "true", token: action.payload.jwt};
+        return {...state, logged_in: "true", token: action.payload.jwt};
       }
     case 'FETCH_USER':
-      debugger
       let user = {
         username: action.payload.username,
         firstName: action.payload.firstname,
@@ -19,7 +18,7 @@ function userReducer(state={logged_in: "false", token: ""}, action) {
       }
       return { ...state, user: user };
     case 'LOGOUT':
-      return {logged_in: "false", token: ""};
+      return {...state, logged_in: "false", token: ""};
     default:
       return state;
   }
