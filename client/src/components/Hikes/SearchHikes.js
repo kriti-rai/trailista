@@ -3,7 +3,7 @@ import React from 'react';
 function SearchHikes() {
   return (
     <form >
-      <input className='form-control-lg' id='searchbox' type='text' placeholder="Enter a city..." />
+      <input className='form-control form-control-lg' id='searchbox' type='text' placeholder="Enter a city..." />
     </form>
   )
 }
