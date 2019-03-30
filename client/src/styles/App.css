@@ -17,6 +17,8 @@
   color: black;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Permanent+Marker')
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -92,6 +94,7 @@ background-color: white;
  min-height: 100vh;
 }
 
+
 .welcome-msg {
   float: none;
   font-size: 80px;
@@ -129,5 +132,3 @@ background-color: white;
  background-size: cover;
  min-height: 100vh;
 }
-
-@import url('https://fonts.googleapis.com/css?family=Quicksand|Permanent+Marker')
