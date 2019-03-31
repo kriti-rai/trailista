@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles/app.css';
-import './styles/hikecard.css';
+import './styles/hikes.css';
+import './styles/user-profile.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Navbar from './containers/Navbar';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
@@ -17,26 +18,24 @@ import { logout } from './actions/userActions';
 import { fetchCurrentUser } from './actions/userActions';
 
 class App extends Component {
-  state = { currentUser: null }
 
   componentDidMount() {
     this.props.fetchHikes();
   }
 
   render() {
-    // debugger
     return (
       <div className="App">
         <Router>
-          <Navbar logged_in={ this.props.logged_in } currentUser={this.state.currentUser}/>
+          <Navbar logged_in={ this.props.logged_in } />
             <Switch>
               <Route exact path="/" exact component={Home} />
               <Route exact path="/about" component={About} />
-              <Route exact path="/user" render={ routerProps => <User fetchCurrentUser={ this.props.fetchCurrentUser } user={ this.props.user }/>} />
+              <Route exact path="/user" render={ routerProps => <User token={ this.props.token} fetchCurrentUser={ this.props.fetchCurrentUser } /> } />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Register} />
               <Route path="/hikes/:hikeId" render={ routerProps => <Hike {...routerProps} hikes={ this.props.hikes }/> } />
-              <Route path="/hikes" render={ routerProps => <HikesContainer {...routerProps} hikes={ this.props.hikes }/> } />
+              <Route path="/hikes" render={ routerProps => <HikesContainer {...routerProps} hikes={ this.props.hikes } /> } />
               <Route path="/logout" render={ props => {
                 this.props.logout()
                 return <Redirect to = '/' />
@@ -53,8 +52,7 @@ const mapStateToProps = (state) => {
   return {
       hikes: state.hikes,
       logged_in: state.user.logged_in,
-      token: state.user.token,
-      user: state.user.user
+      token: state.user.token
     }
 }
 
