@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_21_013605) do
+ActiveRecord::Schema.define(version: 2019_03_31_014319) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "hike_id"
@@ -26,6 +26,11 @@ ActiveRecord::Schema.define(version: 2019_03_21_013605) do
     t.string "descent"
     t.float "ratings"
     t.string "difficulty"
+  end
+
+  create_table "hikes_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "hike_id"
   end
 
   create_table "users", force: :cascade do |t|
