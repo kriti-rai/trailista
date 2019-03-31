@@ -8,7 +8,7 @@ const HikeCard = ({ hike }) => {
       <img className="hike-card-image" src= { hike.image} />
       <div className="hike-info">
         <h5>{  hike.title }</h5>
-        <p><small>Difficult: {  hike.difficulty }</small></p>
+        <small>Difficult: {  hike.difficulty }</small>
         <p><small>Rating: {  hike.ratings}</small></p>
       </div>
     </div>
