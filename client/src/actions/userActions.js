@@ -26,7 +26,6 @@ export function login(user, callback) {
 }
 
 export function signup(user, callback) {
-  // debugger
   return (dispatch) => {
     dispatch({ type: "LOADING_USER_INFO" })
     return axios.post(`${ API_URL }/users`, user)
@@ -67,6 +66,7 @@ export function fetchCurrentUser(token) {
     if (token) {
       config['headers']['Authorization'] = 'Bearer' + token
     }
+    debugger
     return axios.get(`${ API_URL }/show`, config)
       .then(response => {
         dispatch({
