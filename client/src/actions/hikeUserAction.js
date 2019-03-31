@@ -8,10 +8,11 @@ let config = {
 
 export function favorite(token, id) {
   config['headers']['Authorization'] = 'Bearer' + token
-  config['headers']['hike_id'] = id
+
+  let data = { "hike_id" : id }
 
   return (dispatch) => {
-    return axios.post(`${ API_URL }/favorites`, config)
+    return axios.post(`${ API_URL }/favorites`, data, config)
       .then(response =>
         dispatch({
           type: 'FAVORITE',
