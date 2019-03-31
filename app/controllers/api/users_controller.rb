@@ -22,9 +22,10 @@ class Api::UsersController < ApplicationController
   end
 
   def favorites
+    hike = Hike.find(params["hike_id"])
     user = @current_user
-    favorite_hikes = user.hikes
-    render json: favorite_hikes, status: 200
+    user.add_to_favorite(hike)
+    render json: user.hikes, status: 200
   end
 
 end
