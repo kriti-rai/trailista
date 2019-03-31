@@ -9,7 +9,8 @@ function userReducer(state={logged_in: "false", token: "", user: {}}, action) {
         return {...state, logged_in: "true", token: action.payload.jwt};
       }
     case 'FETCH_USER':
-      let user = {
+    debugger
+      var user = {
         username: action.payload.username,
         firstName: action.payload.firstname,
         lastName: action.payload.lastname,
@@ -19,6 +20,8 @@ function userReducer(state={logged_in: "false", token: "", user: {}}, action) {
       return { ...state, user: user };
     case 'LOGOUT':
       return {...state, logged_in: "false", token: ""};
+    case 'FAVORITE':
+      return  {...state, user: {...state.user, hikes: action.payload} }
     default:
       return state;
   }
