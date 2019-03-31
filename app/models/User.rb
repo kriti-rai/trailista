@@ -1,10 +1,16 @@
 class User < ApplicationRecord
   has_secure_password
+
+  has_many :hikes_users
+  has_many :hikes, through: :hikes_users
   validates :email, uniqueness: {case_sensitive: false}, presence: true
   validates :username, uniqueness: {case_sensitive: false}, presence: true
   validates :firstname, :lastname, presence: true
-  validates :password_digest, presence: true, length: { minimum: 6 }
-  #has username, firstname, lastname, email, password_digest, image
+  # validates :password, presence: true, length: { minimum: 6 }
 
-  # has_many :favorites
+  def add_to_favorite(hike)
+    self.hikes << hike
+  end
+
+
 end
