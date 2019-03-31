@@ -1,6 +1,5 @@
 .hike-card {
   color: grey;
-  padding: 15px;
   border-radius: 2px;
   display: inline-block;
   height: 300px;
@@ -17,11 +16,17 @@
 }
 
 .hike-card-image {
-  width: 45;
-  height: 40%;
+  width: 100%;
+  height: 55%;
 }
 
 .hikes-container {
   margin-top: 25px;
   margin-bottom: 25px;
+}
+
+.hike-info {
+  padding-top: 25px;
+  background-color: black;
+  padding-bottom: 2px;
 }
