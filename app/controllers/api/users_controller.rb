@@ -21,4 +21,10 @@ class Api::UsersController < ApplicationController
     render json: user
   end
 
+  def favorites
+    user = @current_user
+    favorite_hikes = user.hikes
+    render json: favorite_hikes, status: 200
+  end
+
 end
