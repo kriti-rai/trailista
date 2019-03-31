@@ -66,7 +66,6 @@ export function fetchCurrentUser(token) {
     if (token) {
       config['headers']['Authorization'] = 'Bearer' + token
     }
-    debugger
     return axios.get(`${ API_URL }/show`, config)
       .then(response => {
         dispatch({
