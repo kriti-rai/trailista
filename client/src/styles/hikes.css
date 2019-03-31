@@ -26,7 +26,27 @@
 }
 
 .hike-info {
-  padding-top: 25px;
+  padding-top: 45px;
   background-color: black;
   padding-bottom: 2px;
+}
+
+.fav-btn {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: black;
+  opacity: 0.5;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.fav-btn i:hover {
+  color: red;
 }
