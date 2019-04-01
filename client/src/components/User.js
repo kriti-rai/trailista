@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import Favorites from '.././containers/FavoritesContainer';
+import FavoritesContainer from '.././containers/FavoritesContainer';
 
 class User extends Component {
 
@@ -17,8 +17,7 @@ class User extends Component {
           <h3><em>{this.props.currentUser.username}</em></h3>
           <h3>{ this.props.currentUser.firstName } { this.props.currentUser.lastName }</h3>
           <hr></hr>
-          <h4>My Favorites &hearts;</h4>
-          <Favorites />
+          <FavoritesContainer favHikes={ this.props.favHikes } />
         </div>
       </div>
       </>
@@ -26,4 +25,11 @@ class User extends Component {
   }
 }
 
-export default connect(state => ({ currentUser: state.user.user }))(User);
+const mapStateToProps = state => {
+  return ({
+    currentUser: state.user.info,
+    favHikes: state.user.favHikes
+  })
+}
+
+export default connect(mapStateToProps)(User);
