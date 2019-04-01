@@ -1,9 +1,11 @@
 import React from 'react';
+import FavoritesList from '.././components/Favorites/FavoritesList';
 
 const FavoritesContainer = (props) => {
     return (
       <div className="favorites-container">
-        <small>(render my favorite hikes)</small>
+        <h4>My Favorites &hearts;</h4>
+        <FavoritesList favHikes = { props.favHikes } />
       </div>
     )
 };
