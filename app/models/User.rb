@@ -1,8 +1,9 @@
 class User < ApplicationRecord
   has_secure_password
 
-  has_many :hikes_users
-  has_many :hikes, through: :hikes_users
+  has_many :favorited_hikes
+  has_many :hikes, through: :favorited_hikes
+
   validates :email, uniqueness: {case_sensitive: false}, presence: true
   validates :username, uniqueness: {case_sensitive: false}, presence: true
   validates :firstname, :lastname, presence: true
