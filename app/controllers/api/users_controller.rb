@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  skip_before_action :authenticate, only: [:create]
+  skip_before_action :authenticate
 
   def create
     username = params["username"].downcase
@@ -7,7 +7,7 @@ class Api::UsersController < ApplicationController
     firstname = params["firstname"].capitalize
     lastname = params["lastname"].capitalize
 
-    user = User.new(username: username, email: email, password: params["password"], firstname: firstname, lastname: lastname)
+    user = User.new(username: username, email: email, password: params["password"], firstname: firstname, lastname: lastname, fav_hikes: [])
     if user.valid? && user.save
       jwt = Auth.issue({user: user.id})
       render json: {jwt: jwt}
@@ -18,7 +18,7 @@ class Api::UsersController < ApplicationController
 
   def show
     user = @current_user
-    render json: user
+    render json: user, status: 200
   end
 
   def favorites
