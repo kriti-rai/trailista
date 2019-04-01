@@ -50,3 +50,14 @@
 .fav-btn i:hover {
   color: red;
 }
+
+.del-btn {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+#del-btn {
+  color: red;
+  size: 1px;
+}
