@@ -52,7 +52,7 @@ const mapStateToProps = (state) => {
   return {
       hikes: state.hikes,
       token: state.user.token,
-      logged_in: window.localStorage.getItem('logged_in')
+      logged_in: state.user.logged_in
     }
 }
 
