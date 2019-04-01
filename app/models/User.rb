@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  attr_writer :hikes
+
   has_secure_password
 
   has_many :favorited_hikes
