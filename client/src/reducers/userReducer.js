@@ -1,4 +1,4 @@
-function userReducer(state={logged_in: "false", loading: "false", token: "", info: {}, fav_hikes: []}, action) {
+function userReducer(state={logged_in: "false", loading: "false", token: "", info: {}, favHikes: []}, action) {
   switch (action.type) {
     case 'LOADING_USER_INFO':
       return {...state, loading: "true"};
@@ -29,7 +29,7 @@ function userReducer(state={logged_in: "false", loading: "false", token: "", inf
         fav_hikes: [...state.fav_hikes, action.payload.fav_hikes]
       }
     case 'LOGOUT':
-      return {...state, logged_in: "false", loading: "false", token: "", info: {}, fav_hikes: []};
+      return {...state, logged_in: "false", loading: "false", token: "", info: {}, favHikes: []};
     case 'FAVORITE':
       return  {...state, ...state.user, favHikes: state.favHikes.concat(action.payload)}
     default:
