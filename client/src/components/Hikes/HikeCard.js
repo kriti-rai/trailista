@@ -3,20 +3,17 @@ import { connect } from 'react-redux';
 import { favorite } from '../.././actions/hikeUserAction';
 import Hike from './Hike';
 
-
-
 class HikeCard extends Component {
-
-
-
+  
   render() {
 
     const handleClick = (e) => {
       e.preventDefault();
-      this.props.favorite(window.localStorage.getItem('jwt'), this.props.hike.id)
+      this.props.favorite(window.localStorage.getItem("jwt"), this.props.hike.id)
     }
 
-    const hike = this.props.hike
+    const hike = this.props.hike;
+
     return (
       <div className="hike-card">
         <button className="fav-btn" onClick={ handleClick } ><i className="fas fa-heart"></i></button>
