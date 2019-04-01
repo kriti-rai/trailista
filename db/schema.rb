@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2019_04_01_005457) do
     t.text "body"
   end
 
-  create_table "favorited_hikes", force: :cascade do |t|
+  create_table "fav_hikes", force: :cascade do |t|
     t.integer "hike_id"
     t.integer "user_id"
   end
