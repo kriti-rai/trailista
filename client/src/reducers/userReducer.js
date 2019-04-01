@@ -1,12 +1,16 @@
-function userReducer(state={logged_in: "false", token: "", user: {}}, action) {
+function userReducer(state={loading: "false", token: "", info: {}, fav_hikes: []}, action) {
   switch (action.type) {
     case 'LOADING_USER_INFO':
-      return state;
+      return {...state, loading: "true"};
     case 'AUTHENTICATE_USER':
       if (!action.payload.hasOwnProperty('jwt')) {
         return state;
       } else {
-        return {...state, logged_in: "true", token: action.payload.jwt};
+        return {
+          ...state,
+          loading: "false",
+          token: action.payload.jwt
+        };
       }
     case 'FETCH_USER':
     debugger
@@ -17,11 +21,11 @@ function userReducer(state={logged_in: "false", token: "", user: {}}, action) {
         email: action.payload.email,
         image: action.payload.image
       }
-      return { ...state, user: user };
+      return { ...state, loading: "false", info: user, fav_hikes: [...state.fav_hikes, action.payload.fav_hikes] }
     case 'LOGOUT':
-      return {...state, logged_in: "false", token: ""};
+      return state;
     case 'FAVORITE':
-      return  {...state, user: {...state.user, hikes: action.payload} }
+      return  {...state, ...state.user, favHikes: state.favHikes.concat(action.payload)}
     default:
       return state;
   }
