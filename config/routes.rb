@@ -6,9 +6,9 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resources :sessions, only: [:create]
     get '/show' => 'users#show'
-    post '/add_favorite' => 'user#add_favorite'
-    post '/delete_favorite' => 'user#delete_favorite'
-    post '/clear_favorites' => 'user#clear_favorites'
+    post '/add_favorite' => 'users#add_favorite'
+    post '/delete_favorite' => 'users#delete_favorite'
+    post '/clear_favorites' => 'users#clear_favorites'
     post '/logout' => 'sessions#logout'
   end
 
