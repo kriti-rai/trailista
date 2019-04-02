@@ -3,10 +3,16 @@ import { Link } from 'react-router-dom';
 
 function Favorite(props) {
   let id = props.favHike.id - 1;
+  let token = window.localStorage.getItem('jwt');
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    props.deleteFavorite(token, props.favHike.id);
+  }
 
   return (
     <p>
-      <Link to={`/hikes/${id}`}>{ props.favHike.title } </Link> <button className="del-btn"><i id="del-btn" className="fas fa-minus-circle"> </i></button>
+      <Link to={`/hikes/${id}`}>{ props.favHike.title } </Link> <button className="del-btn" onClick={ handleClick }><i id="del-btn" className="fas fa-minus-circle"> </i></button>
     </p>
   )
 }
