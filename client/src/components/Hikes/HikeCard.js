@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { favorite } from '../.././actions/hikeUserAction';
+import { favorite } from '../.././actions/hikeUserActions';
 import Hike from './Hike';
 
 class HikeCard extends Component {
-  
+
   render() {
 
     const handleClick = (e) => {
@@ -20,8 +20,8 @@ class HikeCard extends Component {
         <img className="hike-card-image" src= { hike.image} />
         <div className="hike-info">
           <h5>{  hike.title }</h5>
-          <small>Difficult: {  hike.difficulty }</small>
-          <p><small>Rating: {  hike.ratings}</small></p>
+          <small>Difficult: { hike.difficulty }</small>
+          <p><small>Rating: { hike.ratings }</small></p>
         </div>
       </div>
     )
