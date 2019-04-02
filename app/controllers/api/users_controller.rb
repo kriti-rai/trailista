@@ -1,5 +1,7 @@
 class Api::UsersController < ApplicationController
   skip_before_action :authenticate, only: [:create]
+  before_action :set_user, only: [:show, :favorites, :remove_favorite, :clear_favorites]
+
 
   def create
     username = params["username"].downcase
@@ -17,15 +19,30 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    user = @current_user
-    render json: user, status: 200
+    render json: @user, status: 200
   end
 
   def favorites
     hike = Hike.find(params["hike_id"])
-    user = @current_user
-    user.add_to_favorite(hike)
+    @user.add_to_favorite(hike)
     render json: user.fav_hikes, status: 200
+  end
+
+  def remove_favorite
+    hike = Hike.find(params["hike_id"])
+    @user.remove_favorite(hike)
+    render json: @user.fav_hikes, status: 200
+  end
+
+  def clear_favorites
+    @user.remove_all_favorites
+    render json: @user.fav_hikes, status: 200
+  end
+
+  private
+  
+  def set_user
+    @user = @current_user
   end
 
 end
