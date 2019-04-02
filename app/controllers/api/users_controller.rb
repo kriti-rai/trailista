@@ -22,10 +22,10 @@ class Api::UsersController < ApplicationController
     render json: @user, status: 200
   end
 
-  def favorites
+  def add_favorite
     hike = Hike.find(params["hike_id"])
     @user.add_to_favorite(hike)
-    render json: user.fav_hikes, status: 200
+    render json: @user.fav_hikes, status: 200
   end
 
   def remove_favorite
@@ -40,7 +40,7 @@ class Api::UsersController < ApplicationController
   end
 
   private
-  
+
   def set_user
     @user = @current_user
   end
