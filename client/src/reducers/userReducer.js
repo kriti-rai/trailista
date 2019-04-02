@@ -32,6 +32,8 @@ function userReducer(state={logged_in: "false", loading: "false", token: "", inf
       return {...state, logged_in: "false", loading: "false", token: "", info: {}, favHikes: []};
     case 'FAVORITE':
       return  {...state, ...state.user, favHikes: state.favHikes.concat(action.payload)}
+    case 'DELETE_FAVORITE':
+      return  {...state, ...state.user, favHikes: action.payload}
     default:
       return state;
   }
