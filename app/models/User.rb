@@ -23,7 +23,7 @@ class User < ApplicationRecord
   end
 
   def delete_favorite(hike)
-    self.fav_hikes.delete_if{|fav_hike| fav_hike.id == hike.id}
+    self.fav_hikes.delete(hike)
   end
 
   def remove_all_favorites
