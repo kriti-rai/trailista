@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :sessions, only: [:create]
     get '/show' => 'users#show'
     post '/favorites' => 'users#favorites'
+    post '/remmove_favorite' => 'user#remove_favorite'
+    post '/clear_favorites' => 'user#clear_favorites'
     post '/logout' => 'sessions#logout'
   end
 
