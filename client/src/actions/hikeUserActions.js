@@ -27,7 +27,7 @@ export function deleteFavorite(token, id) {
   let data = { "hike_id" : id }
 
   return (dispatch) => {
-    return axios.post(`${ API_URL }/delete_favorites`, data, config)
+    return axios.post(`${ API_URL }/delete_favorite`, data, config)
       .then(response =>
         dispatch({
           type: 'DELETE_FAVORITE',
