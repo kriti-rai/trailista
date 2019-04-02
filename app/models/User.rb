@@ -22,7 +22,7 @@ class User < ApplicationRecord
     self.fav_hikes << hike unless self.fav_hikes.detect{|fav_hike| fav_hike.id == hike.id}
   end
 
-  def remove_favorite(hike)
+  def delete_favorite(hike)
     self.fav_hikes.delete_if{|fav_hike| fav_hike.id == hike.id}
   end
 
