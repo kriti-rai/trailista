@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { deleteFavorite } from '.././actions/hikeUserActions';
 import FavoritesContainer from '.././containers/FavoritesContainer';
 
 class User extends Component {
@@ -17,7 +18,7 @@ class User extends Component {
           <h3><em>{this.props.currentUser.username}</em></h3>
           <h3>{ this.props.currentUser.firstName } { this.props.currentUser.lastName }</h3>
           <hr></hr>
-          <FavoritesContainer favHikes={ this.props.favHikes } />
+          <FavoritesContainer favHikes={ this.props.favHikes } deleteFavorite={ this.props.deleteFavorite } />
         </div>
       </div>
       </>
@@ -32,4 +33,4 @@ const mapStateToProps = state => {
   })
 }
 
-export default connect(mapStateToProps)(User);
+export default connect(mapStateToProps, { deleteFavorite })(User);
