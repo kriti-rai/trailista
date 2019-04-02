@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
   skip_before_action :authenticate, only: [:create]
-  before_action :set_user, only: [:show, :favorites, :remove_favorite, :clear_favorites]
+  before_action :set_user, only: [:show, :add_favorite, :delete_favorite, :clear_favorites]
 
 
   def create
@@ -29,6 +29,7 @@ class Api::UsersController < ApplicationController
   end
 
   def delete_favorite
+    binding.pry
     hike = Hike.find(params["hike_id"])
     @user.delete_favorite(hike)
     render json: @user.fav_hikes, status: 200
