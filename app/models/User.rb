@@ -19,12 +19,16 @@ class User < ApplicationRecord
   end
 
   def add_to_favorite(hike)
-    self.hikes << hike unless self.fav_hikes.detect{|fav_hike| fav_hike.id == hike.id}
+    self.fav_hikes << hike unless self.fav_hikes.detect{|fav_hike| fav_hike.id == hike.id}
   end
 
-  # def remove_favorite(hike)
-  #   self.hikes.delete_if(|fav_hike| fav_hike.id == hike.id)
-  # end
+  def remove_favorite(hike)
+    self.fav_hikes.delete_if{|fav_hike| fav_hike.id == hike.id}
+  end
+
+  def remove_all_favorites
+    self.fav_hikes.clear
+  end
 
 
 end
