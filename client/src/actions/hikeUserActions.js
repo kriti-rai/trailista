@@ -30,7 +30,7 @@ export function deleteFavorite(token, id) {
     return axios.post(`${ API_URL }/delete_favorites`, data, config)
       .then(response =>
         dispatch({
-          type: 'REMOVE_FAVORITE',
+          type: 'DELETE_FAVORITE',
           payload: response.data
       })
     )};
