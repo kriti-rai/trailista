@@ -28,9 +28,9 @@ class Api::UsersController < ApplicationController
     render json: @user.fav_hikes, status: 200
   end
 
-  def remove_favorite
+  def delete_favorite
     hike = Hike.find(params["hike_id"])
-    @user.remove_favorite(hike)
+    @user.delete_favorite(hike)
     render json: @user.fav_hikes, status: 200
   end
 
