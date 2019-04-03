@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 function HikesList({ hikes }) {
   return (
     <div>
-      { hikes.map((hike, id) => <NavLink to={`/hikes/${ id }`} key={ id }><HikeCard hike={ hike }/></NavLink>) }
+      { hikes.map((hike) => <NavLink to={`/hikes/hike_${hike.id }`} key={ hike.id }><HikeCard hike={ hike }/></NavLink>) }
     </div>
   )
 }
