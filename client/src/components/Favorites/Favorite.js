@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 function Favorite(props) {
@@ -11,9 +11,10 @@ function Favorite(props) {
   }
 
   return (
-    <p>
-      <Link to={`/hikes/${id}`}>{ props.favHike.title } </Link> <button className="del-btn" onClick={ handleClick }><i id="del-btn" className="fas fa-minus-circle"> </i></button>
-    </p>
+    <>
+      <small><Link to={`/hikes/${id}`}>{ props.favHike.title } </Link> <button className="del-btn" onClick={ handleClick }><i id="del-btn" className="fas fa-minus-circle"> </i></button></small>
+      <br></br>
+    </>
   )
 }
 
