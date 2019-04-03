@@ -29,7 +29,7 @@ class App extends Component {
         <Router>
           <Navbar logged_in={ this.props.logged_in } />
             <Switch>
-              <Route exact path="/" exact component={Home} />
+              <Route exact path="/" component={Home} />
               <Route exact path="/about" component={About} />
               <Route exact path="/user" render={ routerProps => <User token={ this.props.token} fetchCurrentUser={ this.props.fetchCurrentUser } /> } />
               <Route exact path="/login" component={Login} />
