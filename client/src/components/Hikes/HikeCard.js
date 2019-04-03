@@ -9,7 +9,7 @@ class HikeCard extends Component {
 
     const handleClick = (e) => {
       e.preventDefault();
-      this.props.favorite(window.localStorage.getItem("jwt"), this.props.hike.id)
+      this.props.favorite(window.localStorage.getItem("jwt"), this.props.hike)
     }
 
     const hike = this.props.hike;
