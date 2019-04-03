@@ -29,7 +29,6 @@ class Api::UsersController < ApplicationController
   end
 
   def delete_favorite
-    binding.pry
     hike = Hike.find(params["hike_id"])
     @user.delete_favorite(hike)
     render json: @user.fav_hikes, status: 200
