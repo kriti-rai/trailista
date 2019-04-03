@@ -11,7 +11,6 @@ function Hike({ match, hikes }) {
       <p>Descent:{ hikes[match.params.hikeId].descent }</p>
       <p><img src={ hikes[match.params.hikeId].image} /></p>
       <small className="hike-overview">{ hikes[match.params.hikeId].overview }</small>
-
     </div>
   )
 }
