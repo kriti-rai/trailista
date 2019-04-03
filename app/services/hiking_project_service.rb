@@ -8,7 +8,7 @@ class HikingProjectService
       req.params['key'] = '200433706-b893b66d00841f18007905dd3d568c32'
     end
 
-    JSON.parse(resp.body)
+    JSON.parse(resp.body)["trails"]
 
   end
 
