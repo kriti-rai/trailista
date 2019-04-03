@@ -23,7 +23,9 @@ class Api::UsersController < ApplicationController
   end
 
   def add_favorite
-    hike = Hike.find(params["hike_id"])
+    #when this action is called, create hike object and save to db
+    binding.pry
+    hike = Hike.new(hike_params)
     @user.add_to_favorite(hike)
     render json: @user.fav_hikes, status: 200
   end
@@ -44,5 +46,32 @@ class Api::UsersController < ApplicationController
   def set_user
     @user = @current_user
   end
+
+  def hike_params
+    params.require(:hike).permit(
+      :id,
+      :name,
+      :summary,
+      :difficulty,
+      :stars,
+      :starVotes,
+      :location,
+      :imgSqSmall,
+      :imgSmall,
+      :imgSmallMed,
+      :imgMedium,
+      :length,
+      :ascent,
+      :descent,
+      :high,
+      :low,
+      :longitude,
+      :latitude,
+      :conditionStatus,
+      :conditionDetails,
+      :conditionDate
+    )
+  end
+
 
 end
