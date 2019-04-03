@@ -41,6 +41,41 @@ hikes = Hike.create(
       ratings: 4.7,
       difficulty: "Intermediate/Difficult",
       comments: []
+    },
+    {
+      title: 'Everest Base Camp Trek',
+      overview: "This unique trek starts with a spectacular flight from Kathmandu to Lukla, from where we take an unusual route through the heart of Sherpa country. This creates a much more interesting trek to the highest mountain in the world. The long, arduous trek culminates with an early morning ascent of Kala Pattar (18,188ft/5,545m), which overlooks the Base Camp and offers superb views of Everest, Lhotse, Nuptse, and Makalu.",
+      image: "https://cdn-files.apstatic.com/hike/7021700_large_1471190470.jpg",
+      length: 33,
+      ascent: "17,463'",
+      descent: "-8,380'",
+      ratings: 5.0,
+      difficulty: "Difficult",
+      comments: []
+    },
+    {
+      title: 'Grand Canyon',
+      overview: "
+This is a must do hike! You'll be propelled to get to the next mile by the beauty the canyon possess. ",
+      image:"https://cdn-files.apstatic.com/hike/7010841_medium_1453773239.jpg",
+      length: 47.5,
+      ascent: "8,178'",
+      descent: "-2,454'",
+      ratings: 4.9,
+      difficulty: "Intermediate/Difficult",
+      comments: []
+    },
+    {
+      title: 'Turk Mountain Out and Back',
+      overview: "
+This great hike is a short, but scenic out and back to the top of Turk Mountain where some amazing views await!",
+      image:"https://cdn-files.apstatic.com/hike/7056113_medium_1551190716.jpg",
+      length: 2.4,
+      ascent: "2,938'",
+      descent: "-2,530'",
+      ratings: 4.0,
+      difficulty: "Intermediate",
+      comments: []
     }
   ]
 )
