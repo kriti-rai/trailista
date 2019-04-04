@@ -10,7 +10,8 @@ class Register extends Component {
       firstname: "",
       lastname: "",
       email: "",
-      password: ""
+      password: "",
+      location: ""
     }
   }
 
@@ -49,6 +50,9 @@ class Register extends Component {
                   </div>
                     <div className="input-group form-group">
                       <input type="password" name="password" value={ this.state.password } className="form-control" placeholder="Password" onChange={ this.handleChange } />
+                    </div>
+                    <div className="input-group form-group">
+                      <input type="text" name="location" value={ this.state.location } className="form-control" placeholder="Location" onChange={ this.handleChange } />
                     </div>
                     <div className="form-group">
                       <input className="button login_btn" type="submit" value="Sign Up"/>
