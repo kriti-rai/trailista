@@ -8,8 +8,9 @@ class Api::UsersController < ApplicationController
     email = params["email"].downcase
     firstname = params["firstname"].capitalize
     lastname = params["lastname"].capitalize
+    location = params["location"]
 
-    user = User.new(username: username, email: email, password: params["password"], firstname: firstname, lastname: lastname, fav_hikes: [])
+    user = User.new(username: username, email: email, password: params["password"], firstname: firstname, lastname: lastname, location: location, fav_hikes: [])
     if user.valid? && user.save
       jwt = Auth.issue({user: user.id})
       render json: {jwt: jwt}
@@ -24,7 +25,6 @@ class Api::UsersController < ApplicationController
 
   def add_favorite
     #when this action is called, create hike object and save to db
-    binding.pry
     hike = Hike.new(hike_params)
     @user.add_to_favorite(hike)
     render json: @user.fav_hikes, status: 200
