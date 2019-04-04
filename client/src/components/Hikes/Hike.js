@@ -1,16 +1,21 @@
 import React from 'react';
 
 function Hike({ match, hikes }) {
+  let id;
+  let hike;
+  id = +match.params.hikeId.replace((/hike_/), "")
+  hike = hikes.find(hike => hike.id === id)
+
   return (
     <div className="hikes-container">
-      <h3>{ hikes[match.params.hikeId].title }</h3>
-      <p>Difficulty: { hikes[match.params.hikeId].difficulty }</p>
-      <p>Rating: { hikes[match.params.hikeId].ratings }</p>
-      <p>Length:{ hikes[match.params.hikeId].length }</p>
-      <p>Ascent:{ hikes[match.params.hikeId].ascent }</p>
-      <p>Descent:{ hikes[match.params.hikeId].descent }</p>
-      <p><img src={ hikes[match.params.hikeId].image} /></p>
-      <small className="hike-overview">{ hikes[match.params.hikeId].overview }</small>
+      <h3>{ hike.name }</h3>
+      <p>Difficulty: { hike.difficulty }</p>
+      <p>Rating: { hike.ratings }</p>
+      <p>Length:{ hike.length }</p>
+      <p>Ascent:{ hike.ascent }</p>
+      <p>Descent:{ hike.descent }</p>
+      <p><img src={ hike.imgMedium} /></p>
+      <small className="hike-overview">{ hike.summary }</small>
 
     </div>
   )
