@@ -9,7 +9,24 @@ class User extends Component {
     this.props.fetchCurrentUser(this.props.token)
   }
 
+  createdAt = (date) => {
+    let d = new Date(date)
+    let monthNames = [
+      "Jan", "Feb", "Mar",
+      "Apr", "May", "Jun", "Jul",
+      "Aug", "Sep", "Oct",
+      "Nov", "Dec"
+    ];
+
+    let day = d.getDate();
+    let monthIndex = d.getMonth();
+    let year = d.getFullYear();
+
+    return day + ' ' + monthNames[monthIndex] + ' ' + year;
+  }
+
   render() {
+
     return (
       <>
       <div className='profile-container'>
@@ -18,7 +35,7 @@ class User extends Component {
           <h3><em>{this.props.currentUser.username}</em></h3>
           <h3>{ this.props.currentUser.firstName } { this.props.currentUser.lastName }</h3>
           <p><i class="fas fa-map-marker-alt"></i> <small>{ this.props.currentUser.location }</small></p>
-          <p><small>Member since: { this.props.currentUser.created_at }</small></p>
+          <p><small>Member since: { this.createdAt(this.props.currentUser.created_at) }</small></p>
           <hr></hr>
           <FavoritesContainer favHikes={ this.props.favHikes } deleteFavorite={ this.props.deleteFavorite } />
         </div>
