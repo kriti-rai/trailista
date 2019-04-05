@@ -37,7 +37,7 @@ class App extends Component {
               <Route exact path="/user" render={ routerProps => <User token={ this.props.token} fetchCurrentUser={ this.props.fetchCurrentUser } /> } />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Register} />
-              <Route path="/hikes/:hikeId" render={ routerProps => <Hike {...routerProps} hikes={ this.props.hikes }/> } />
+              <Route path="/hikes/hike_:hikeId" render={ routerProps => <Hike {...routerProps} hikes={ this.props.hikes }/> } />
               <Route path="/hikes" render={ routerProps => <HikesContainer {...routerProps} hikes={ this.props.hikes } /> } />
               <Route path="/logout" render={ props => {
                 this.props.logout()
