@@ -12,6 +12,7 @@ import User from './components/User';
 import Home from './components/Home';
 import HikesContainer from './containers/HikesContainer';
 import Hike from './components/Hikes/Hike';
+import AlertsList from './components/Alerts/AlertsList';
 import { fetchHikes } from './actions/hikeActions';
 import { connect } from 'react-redux';
 import { logout } from './actions/userActions';
@@ -28,6 +29,7 @@ class App extends Component {
       <div className="App">
         <Router>
           <Navbar logged_in={ this.props.logged_in } />
+          <AlertsList />
             <Switch>
               <Route exact path="/" exact component={Home} />
               <Route exact path="/about" component={About} />
