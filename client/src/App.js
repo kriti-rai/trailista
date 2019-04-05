@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './styles/app.css';
 import './styles/hikes.css';
 import './styles/user-profile.css';
+import './styles/alerts.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Navbar from './containers/Navbar';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
