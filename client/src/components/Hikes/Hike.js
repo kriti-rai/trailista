@@ -1,10 +1,9 @@
 import React from 'react';
 
 function Hike({ match, hikes }) {
-  let id;
-  let hike;
-  id = +match.params.hikeId.replace((/hike_/), "")
-  hike = hikes.find(hike => hike.id === id)
+  
+  let id = +match.params.hikeId.replace((/hike_/), "")
+  let hike = hikes.find(hike => hike.id === id)
 
   return (
     <div className="hikes-container">
