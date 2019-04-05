@@ -34,7 +34,7 @@ class User extends Component {
         <div className='user-data'>
           <h3><em>{this.props.currentUser.username}</em></h3>
           <h3>{ this.props.currentUser.firstName } { this.props.currentUser.lastName }</h3>
-          <p><i class="fas fa-map-marker-alt"></i> <small>{ this.props.currentUser.location }</small></p>
+          <p><i className="fas fa-map-marker-alt"></i> <small>{ this.props.currentUser.location }</small></p>
           <p><small>Member since: { this.createdAt(this.props.currentUser.created_at) }</small></p>
           <hr></hr>
           <FavoritesContainer favHikes={ this.props.favHikes } deleteFavorite={ this.props.deleteFavorite } />
