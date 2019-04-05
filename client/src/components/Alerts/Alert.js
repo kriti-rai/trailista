@@ -3,16 +3,15 @@ import React from 'react';
 export default class Alert extends React.Component {
 
   componentDidMount() {
-    this.timer = setTimeout(
-      this.removeAlert,
-      this.props.timeout
+    this.timer = setTimeout( () =>
+      this.props.removeAlert(this.props.alert.id),
+      4000
     );
   }
 
   componentWillUnmount() {
     clearTimeout(this.timer);
   }
-
 
   alertClass (type) {
     let classes = {
@@ -29,14 +28,10 @@ export default class Alert extends React.Component {
       <div className={ alertClassName }>
         <button className='close'
           onClick={ () => {this.props.removeAlert(alert.id)} }>
-          <i class="far fa-times-circle"></i>
+          <i className="far fa-times-circle"></i>
         </button>
         { alert.text }
       </div>
     );
   }
 }
-
-Alert.defaultProps = {
-  timeout: 3000
-};
