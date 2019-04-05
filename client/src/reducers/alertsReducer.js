@@ -5,8 +5,10 @@ function alertsReducer(state=[], action) {
   switch (action.type) {
     case 'ADD_ALERT_MESSAGE':
       return [...state,
-        {id: cuid(),
-        text: action.message}
+        { id: cuid(),
+          text: action.message.text,
+          type: action.message.type
+        }
       ];
     case 'DELETE_ALERT_MESSAGE':
       const index = findIndex(state, { id: action.id });
