@@ -7,7 +7,7 @@ class Api::SessionsController < ApplicationController
       jwt = Auth.issue({user: user.id})
       render json: {jwt: jwt}
     else
-      render json: { error: 'Invalid Credentials. Please try again.'}, status: 404
+      render json: { error: {text: 'Invalid Credentials. Please try again.', type: 'error'} }, status: 404
     end
   end
 
