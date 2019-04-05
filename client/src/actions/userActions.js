@@ -17,7 +17,7 @@ export function login(user, callback) {
           type: 'AUTHENTICATE_USER',
           payload: response.data
         })
-        dispatch({ type: 'ADD_ALERT_MESSAGE', message: "Successfully logged in." })
+        dispatch({ type: 'ADD_ALERT_MESSAGE', message: { text: "Successfully logged in.", type: "success" } })
         callback()
       })
       .catch(error => {
