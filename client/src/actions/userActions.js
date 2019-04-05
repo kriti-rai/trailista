@@ -17,11 +17,12 @@ export function login(user, callback) {
           type: 'AUTHENTICATE_USER',
           payload: response.data
         })
+        dispatch({ type: 'ADD_ALERT_MESSAGE', message: "Successfully logged in." })
         callback()
       })
-      // .catch(error => {
-      //   dispatch({ type: 'SHOW_ERROR', message: error.response.data.error})
-      // })
+      .catch(error => {
+        dispatch({ type: 'ADD_ALERT_MESSAGE', message: error.response.data.error})
+      })
   }
 }
 
@@ -38,9 +39,9 @@ export function signup(user, callback) {
         })
         callback()
       })
-      // .catch(error => {
-      //   dispatch({ type: 'SHOW_ERROR', message: error.response.data.error})
-      // })
+      .catch(error => {
+        dispatch({ type: 'ADD_ALERT_MESSAGE', message: error.response.data.error})
+      })
   }
 }
 
