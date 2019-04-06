@@ -6,7 +6,7 @@ import FavoritesContainer from '.././containers/FavoritesContainer';
 class User extends Component {
 
   componentDidMount() {
-    this.props.fetchCurrentUser(this.props.token)
+    this.props.fetchCurrentUser(this.props.token);
   }
 
   createdAt = (date) => {
@@ -26,7 +26,6 @@ class User extends Component {
   }
 
   render() {
-
     return (
       <>
       <div className='profile-container'>
