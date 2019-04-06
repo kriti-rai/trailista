@@ -6,6 +6,7 @@ import './styles/alerts.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Navbar from './containers/Navbar';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { PrivateRoute } from './helpers/PrivateRoute';
 import Register from './containers/UserRegistration/SignUp';
 import Login from './containers/UserRegistration/Login';
 import About from './components/About';
@@ -34,7 +35,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" exact component={Home} />
               <Route exact path="/about" component={About} />
-              <Route exact path="/user" render={ routerProps => <User token={ this.props.token} fetchCurrentUser={ this.props.fetchCurrentUser } /> } />
+              <PrivateRoute exact path="/user" component={User} token={ this.props.token} fetchCurrentUser={ this.props.fetchCurrentUser } />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Register} />
               <Route path="/hikes/hike_:hikeId" render={ routerProps => <Hike {...routerProps} hikes={ this.props.hikes }/> } />
