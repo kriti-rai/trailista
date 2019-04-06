@@ -40,7 +40,10 @@ export function signup(user, callback) {
         callback()
       })
       .catch(error => {
-        dispatch({ type: 'ADD_ALERT_MESSAGE', message: error.response.data.error})
+        error.response.data.forEach((error) => {
+            dispatch({ type: 'ADD_ALERT_MESSAGE', message: error})
+        })
+
       })
   }
 }
