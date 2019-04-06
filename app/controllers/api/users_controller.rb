@@ -15,7 +15,11 @@ class Api::UsersController < ApplicationController
       jwt = Auth.issue({user: user.id})
       render json: {jwt: jwt}
     else
-      render json: user.errors, status: 400
+      errors = []
+      user.errors.full_messages.each do |msg|
+        errors << {text: msg, type: "error"}
+      end
+      render json: errors, status: 400
     end
   end
 
