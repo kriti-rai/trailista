@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: {case_sensitive: false}, presence: true
   validates :username, uniqueness: {case_sensitive: false}, presence: true
-  validates :firstname, :lastname, presence: true
+  validates :firstname, :lastname, :location, presence: true
   # validates :password, presence: true, length: { minimum: 6 }
 
   def fav_hikes
