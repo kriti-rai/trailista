@@ -9,7 +9,7 @@ const HikesContainer = (props) => {
     return (
       <div className="hikes-container">
         <SearchHikes />
-        { (props.hikes.length > 0) ? <HikesList hikes={ props.hikes } /> : null }
+        { (props.hikes.length > 0) ? <HikesList logged_in= { props.logged_in } hikes={ props.hikes } /> : null }
         <Route path={`${props.match.url}/:hikeId`} render={(routerProps) => <Hike {...routerProps} hikes={ props.hikes } /> }/>
       </div>
     )
