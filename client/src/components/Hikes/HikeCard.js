@@ -5,15 +5,13 @@ import Hike from './Hike';
 
 class HikeCard extends Component {
 
+  handleClick = (e) => {
+    e.preventDefault();
+    this.props.favorite(window.localStorage.getItem("jwt"), this.props.hike)
+  }
+
   render() {
-
-    const handleClick = (e) => {
-      e.preventDefault();
-      this.props.favorite(window.localStorage.getItem("jwt"), this.props.hike)
-    }
-
     const hike = this.props.hike;
-
 
     const difficulty = () => {
       let level;
@@ -35,7 +33,7 @@ class HikeCard extends Component {
 
     return (
       <div className="hike-card">
-        <button className="fav-btn" onClick={ handleClick } ><i className="fas fa-heart"></i></button>
+        { this.props.logged_in === "true" ? <button className="fav-btn" onClick={ this.handleClick } ><i className="fas fa-heart"></i></button> : null }
         <img className="hike-card-image" src= { hike.imgMedium} />
         <div className="hike-info">
           <h5>{  hike.name }</h5>
