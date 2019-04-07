@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './styles/app.css';
+import './styles/App.css';
 import './styles/hikes.css';
 import './styles/user-profile.css';
 import './styles/alerts.css';
