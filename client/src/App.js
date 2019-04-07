@@ -22,9 +22,9 @@ import { fetchCurrentUser } from './actions/userActions';
 
 class App extends Component {
 
-  componentDidMount() {
-    this.props.fetchHikes();
-  }
+  // componentDidMount() {
+  //   this.props.fetchHikes();
+  // }
 
   render() {
     return (
@@ -39,7 +39,7 @@ class App extends Component {
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Register} />
               <Route path="/hikes/hike_:hikeId" render={ routerProps => <Hike {...routerProps} hikes={ this.props.hikes }/> } />
-              <Route path="/hikes" render={ routerProps => <HikesContainer {...routerProps} hikes={ this.props.hikes } /> } />
+              <Route path="/hikes" render={ routerProps => <HikesContainer {...routerProps} logged_in= { this.props.logged_in } hikes={ this.props.hikes } /> } />
               <Route path="/logout" render={ props => {
                 this.props.logout()
                 return <Redirect to = '/' />
