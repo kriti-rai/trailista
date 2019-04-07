@@ -1,0 +1,37 @@
+/* search form */
+
+.search-form {
+  float: none;
+  padding: 30px 395px;
+  float: left;
+}
+
+#searchbox {
+  min-width: 40vw;
+  text-align: center;
+  opacity: 0.7;
+  margin-right:10px;
+  float: left
+}
+
+#country-dropdown {
+  opacity: 0.7;
+  min-width: 40vw;
+  float: left;
+}
+
+#search-button {
+  float: left;
+  min-width: 5vw;
+  padding: 15px;
+  background: #228B22;
+  color: white;
+  font-size: 15px;
+  border: 1px solid grey;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+#search-button:hover {
+  background: #006400;
+}
