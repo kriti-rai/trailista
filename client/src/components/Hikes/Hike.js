@@ -25,14 +25,18 @@ function Hike({ match, hikes }) {
 
   return (
     <div className="hikes-container">
-      <h3>{ hike.name }</h3>
-      <p>Difficulty: { difficulty() }</p>
-      <p>Rating: { hike.stars }</p>
-      <p>Length:{ hike.length }</p>
-      <p>Ascent:{ hike.ascent }</p>
-      <p>Descent:{ hike.descent }</p>
-      <p><img src={ hike.imgMedium} /></p>
-      <small className="hike-overview">{ hike.summary }</small>
+      <h3 className="display-4 hike-page-header">{ hike.name }</h3>
+      <div className="lead">
+        <strong>Difficulty:</strong> { difficulty() } |
+        <strong>Rating:</strong> { hike.stars } |
+        <strong>Length:</strong> { hike.length } |
+        <strong>Ascent:</strong> { hike.ascent } |
+        <strong>Descent:</strong> { hike.descent }
+      </div>
+      <br></br>
+      <img src={ hike.imgMedium} />
+      <br></br>
+      <p><small>{ hike.summary }</small></p>
 
     </div>
   )
