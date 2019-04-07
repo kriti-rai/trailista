@@ -6,7 +6,6 @@ function Home() {
     <>
       <div className="home-container">
         <p className="welcome-msg">Welcome to Trailista</p>
-        <div className='search-form'> <SearchHikes /></div>
       </div>
     </>
   )

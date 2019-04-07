@@ -8,13 +8,18 @@ class Api::UsersController < ApplicationController
     email = params["email"].downcase
     firstname = params["firstname"].capitalize
     lastname = params["lastname"].capitalize
+    location = params["location"]
 
-    user = User.new(username: username, email: email, password: params["password"], firstname: firstname, lastname: lastname, fav_hikes: [])
+    user = User.new(username: username, email: email, password: params["password"], firstname: firstname, lastname: lastname, location: location, fav_hikes: [])
     if user.valid? && user.save
       jwt = Auth.issue({user: user.id})
       render json: {jwt: jwt}
     else
-      render json: user.errors, status: 400
+      errors = []
+      user.errors.full_messages.each do |msg|
+        errors << {text: msg, type: "error"}
+      end
+      render json: errors, status: 400
     end
   end
 
@@ -23,7 +28,8 @@ class Api::UsersController < ApplicationController
   end
 
   def add_favorite
-    hike = Hike.find(params["hike_id"])
+    #when this action is called, create hike object and save to db
+    hike = Hike.new(hike_params)
     @user.add_to_favorite(hike)
     render json: @user.fav_hikes, status: 200
   end
@@ -44,5 +50,32 @@ class Api::UsersController < ApplicationController
   def set_user
     @user = @current_user
   end
+
+  def hike_params
+    params.require(:hike).permit(
+      :id,
+      :name,
+      :summary,
+      :difficulty,
+      :stars,
+      :starVotes,
+      :location,
+      :imgSqSmall,
+      :imgSmall,
+      :imgSmallMed,
+      :imgMedium,
+      :length,
+      :ascent,
+      :descent,
+      :high,
+      :low,
+      :longitude,
+      :latitude,
+      :conditionStatus,
+      :conditionDetails,
+      :conditionDate
+    )
+  end
+
 
 end

@@ -3,15 +3,16 @@ import SearchHikes from '.././components/Hikes/SearchHikes';
 import HikesList from '.././components/Hikes/HikesList';
 import { Route } from 'react-router-dom'
 import Hike from '.././components/Hikes/Hike';
+import { connect } from 'react-redux';
 
 const HikesContainer = (props) => {
     return (
       <div className="hikes-container">
         <SearchHikes />
-        <HikesList hikes={ props.hikes } />
+        { (props.hikes.length > 0) ? <HikesList logged_in= { props.logged_in } hikes={ props.hikes } /> : null }
         <Route path={`${props.match.url}/:hikeId`} render={(routerProps) => <Hike {...routerProps} hikes={ props.hikes } /> }/>
       </div>
     )
 };
 
-export default HikesContainer;
+export default connect((state) => ({ hikes: state.hikes })) (HikesContainer);

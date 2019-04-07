@@ -6,10 +6,10 @@ let config = {
   headers: {}
 };
 
-export function favorite(token, id) {
+export function favorite(token, hikeData) {
   config['headers']['Authorization'] = 'Bearer' + token
 
-  let data = { "hike_id" : id }
+  let data = { "hike" : hikeData }
 
   return (dispatch) => {
     return axios.post(`${ API_URL }/add_favorite`, data, config)

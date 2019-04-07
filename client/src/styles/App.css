@@ -111,18 +111,6 @@ background-color: white;
   -webkit-text-fill-color: transparent;
 }
 
-.search-form {
-  float: none;
-  padding: 30px 395px;
-}
-
-#searchbox {
-  min-width: 40vw;
-  float: none;
-  text-align: center;
-  opacity: 0.7;
-}
-
 
 /*ABOUT */
 .about {

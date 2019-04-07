@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import './styles/app.css';
 import './styles/hikes.css';
 import './styles/user-profile.css';
+import './styles/alerts.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Navbar from './containers/Navbar';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { PrivateRoute } from './helpers/PrivateRoute';
 import Register from './containers/UserRegistration/SignUp';
 import Login from './containers/UserRegistration/Login';
 import About from './components/About';
@@ -12,6 +14,7 @@ import User from './components/User';
 import Home from './components/Home';
 import HikesContainer from './containers/HikesContainer';
 import Hike from './components/Hikes/Hike';
+import AlertsList from './components/Alerts/AlertsList';
 import { fetchHikes } from './actions/hikeActions';
 import { connect } from 'react-redux';
 import { logout } from './actions/userActions';
@@ -19,23 +22,24 @@ import { fetchCurrentUser } from './actions/userActions';
 
 class App extends Component {
 
-  componentDidMount() {
-    this.props.fetchHikes();
-  }
+  // componentDidMount() {
+  //   this.props.fetchHikes();
+  // }
 
   render() {
     return (
       <div className="App">
         <Router>
           <Navbar logged_in={ this.props.logged_in } />
+          <AlertsList />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/about" component={About} />
-              <Route exact path="/user" render={ routerProps => <User token={ this.props.token} fetchCurrentUser={ this.props.fetchCurrentUser } /> } />
+              <PrivateRoute exact path="/user" component={User} token={ this.props.token} fetchCurrentUser={ this.props.fetchCurrentUser } />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Register} />
-              <Route path="/hikes/:hikeId" render={ routerProps => <Hike {...routerProps} hikes={ this.props.hikes }/> } />
-              <Route path="/hikes" render={ routerProps => <HikesContainer {...routerProps} hikes={ this.props.hikes } /> } />
+              <Route path="/hikes/hike_:hikeId" render={ routerProps => <Hike {...routerProps} hikes={ this.props.hikes }/> } />
+              <Route path="/hikes" render={ routerProps => <HikesContainer {...routerProps} logged_in= { this.props.logged_in } hikes={ this.props.hikes } /> } />
               <Route path="/logout" render={ props => {
                 this.props.logout()
                 return <Redirect to = '/' />

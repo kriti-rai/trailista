@@ -17,11 +17,12 @@ export function login(user, callback) {
           type: 'AUTHENTICATE_USER',
           payload: response.data
         })
+        dispatch({ type: 'ADD_ALERT_MESSAGE', message: { text: "Successfully logged in.", type: "success" } })
         callback()
       })
-      // .catch(error => {
-      //   dispatch({ type: 'SHOW_ERROR', message: error.response.data.error})
-      // })
+      .catch(error => {
+        dispatch({ type: 'ADD_ALERT_MESSAGE', message: error.response.data.error})
+      })
   }
 }
 
@@ -38,9 +39,12 @@ export function signup(user, callback) {
         })
         callback()
       })
-      // .catch(error => {
-      //   dispatch({ type: 'SHOW_ERROR', message: error.response.data.error})
-      // })
+      .catch(error => {
+        error.response.data.forEach((error) => {
+            dispatch({ type: 'ADD_ALERT_MESSAGE', message: error})
+        })
+
+      })
   }
 }
 
@@ -60,7 +64,7 @@ export function logout() {
     }
 }
 
-export function fetchCurrentUser(token) {
+export function fetchCurrentUser(token, callback) {
   return (dispatch) => {
     dispatch({ type: "LOADING_USER_INFO" })
     if (token) {
@@ -73,5 +77,8 @@ export function fetchCurrentUser(token) {
           payload: response.data
         })
       })
+      .catch(error => {
+          dispatch({ type: 'ADD_ALERT_MESSAGE', message: { text: error.response.data.error, type: "error" } })
+        })
     }
 }

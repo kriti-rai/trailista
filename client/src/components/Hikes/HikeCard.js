@@ -5,23 +5,40 @@ import Hike from './Hike';
 
 class HikeCard extends Component {
 
+  handleClick = (e) => {
+    e.preventDefault();
+    this.props.favorite(window.localStorage.getItem("jwt"), this.props.hike)
+  }
+
   render() {
-
-    const handleClick = (e) => {
-      e.preventDefault();
-      this.props.favorite(window.localStorage.getItem("jwt"), this.props.hike.id)
-    }
-
     const hike = this.props.hike;
+
+    const difficulty = () => {
+      let level;
+      if (hike.difficulty === "blue") {
+        level = "Intermediate";
+      } else if (hike.difficulty === "greenBlue") {
+        level = "Easy/Intermediate";
+      } else if (hike.difficulty === "blueBlack") {
+        level = "Intermediate/Hard";
+      } else if (hike.difficulty === "black") {
+        level = "Hard"
+      } else if (hike.difficulty === "green") {
+        level = "Easy"
+      } else {
+        level = "N/A"
+      }
+      return level;
+    }
 
     return (
       <div className="hike-card">
-        <button className="fav-btn" onClick={ handleClick } ><i className="fas fa-heart"></i></button>
-        <img className="hike-card-image" src= { hike.image} />
+        { this.props.logged_in === "true" ? <button className="fav-btn" onClick={ this.handleClick } ><i className="fas fa-heart"></i></button> : null }
+        <img className="hike-card-image" src= { hike.imgMedium} />
         <div className="hike-info">
-          <h5>{  hike.title }</h5>
-          <small>Difficult: { hike.difficulty }</small>
-          <p><small>Rating: { hike.ratings }</small></p>
+          <h5>{  hike.name }</h5>
+          <small>Difficulty: { difficulty() }</small>
+          <p><small>Rating: { hike.stars }</small></p>
         </div>
       </div>
     )

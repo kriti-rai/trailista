@@ -4,7 +4,7 @@ function userReducer(state={logged_in: "false", loading: "false", token: "", inf
       return {...state, loading: "true"};
     case 'AUTHENTICATE_USER':
       if (!action.payload.hasOwnProperty('jwt')) {
-        return state;
+        return { ...state, loading: "false" }
       } else {
         return {
           ...state,
@@ -19,7 +19,9 @@ function userReducer(state={logged_in: "false", loading: "false", token: "", inf
         firstName: action.payload.firstname,
         lastName: action.payload.lastname,
         email: action.payload.email,
-        image: action.payload.image
+        image: action.payload.image,
+        location: action.payload.location,
+        created_at: action.payload.created_at
       }
       return {
         ...state,

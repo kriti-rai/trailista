@@ -1,3 +1,5 @@
+/* ///////////////HIKE CARD /////////////////*/
+
 .hike-card {
   color: grey;
   border-radius: 2px;
@@ -20,16 +22,25 @@
   height: 55%;
 }
 
-.hikes-container {
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-
 .hike-info {
   padding-top: 45px;
   background-color: black;
   padding-bottom: 2px;
 }
+
+
+/* ////////////////INDIVIDUAL HIKE PAGE////////////////////////*/
+
+.hikes-container {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.hike-page-header {
+  color: silver;
+}
+
+/* ////////////////////////ADD HIKE TO FAVORITE/////////////////////// */
 
 .fav-btn {
   position: absolute;
@@ -50,6 +61,10 @@
 .fav-btn i:hover {
   color: red;
 }
+
+
+
+/* ///////////////////////////////DELETE HIKE FROM FAVORITES ////////////////////////// */
 
 .del-btn {
   padding: 0;
