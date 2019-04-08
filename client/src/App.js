@@ -19,6 +19,7 @@ import { fetchHikes } from './actions/hikeActions';
 import { connect } from 'react-redux';
 import { logout } from './actions/userActions';
 import { fetchCurrentUser } from './actions/userActions';
+import { addAlertMessage } from './actions/alertsActions';
 
 class App extends Component {
 
@@ -38,7 +39,7 @@ class App extends Component {
               <PrivateRoute exact path="/user" component={User} token={ this.props.token} fetchCurrentUser={ this.props.fetchCurrentUser } />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Register} />
-              <Route path="/hikes/hike_:hikeId" render={ routerProps => <Hike {...routerProps} hikes={ this.props.hikes }/> } />
+              <Route path="/hikes/hike_:hikeId" render={ routerProps => <Hike {...routerProps} hikes={ this.props.hikes } addAlertMessage={ this.props.addAlertMessage} currentUser={ this.props.currentUser }/> } />
               <Route path="/hikes" render={ routerProps => <HikesContainer {...routerProps} logged_in= { this.props.logged_in } hikes={ this.props.hikes } /> } />
               <Route path="/logout" render={ props => {
                 this.props.logout()
@@ -56,8 +57,9 @@ const mapStateToProps = (state) => {
   return {
       hikes: state.hikes,
       token: state.user.token,
+      currentUser: state.user,
       logged_in: state.user.logged_in
     }
 }
 
-export default connect(mapStateToProps, { fetchHikes, logout, fetchCurrentUser })(App);
+export default connect(mapStateToProps, { fetchHikes, logout, fetchCurrentUser, addAlertMessage })(App);
