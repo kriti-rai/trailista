@@ -13,7 +13,7 @@ import About from './components/About';
 import User from './components/User';
 import Home from './components/Home';
 import HikesContainer from './containers/HikesContainer';
-import Hike from './components/Hikes/Hike';
+import HikeContainer from './containers/Hikes/HikeContainer';
 import AlertsList from './components/Alerts/AlertsList';
 import { fetchHikes } from './actions/hikeActions';
 import { connect } from 'react-redux';
@@ -39,7 +39,7 @@ class App extends Component {
               <PrivateRoute exact path="/user" component={User} token={ this.props.token} fetchCurrentUser={ this.props.fetchCurrentUser } />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Register} />
-              <Route path="/hikes/hike_:hikeId" render={ routerProps => <Hike {...routerProps} hikes={ this.props.hikes } addAlertMessage={ this.props.addAlertMessage} currentUser={ this.props.currentUser }/> } />
+              <Route path="/hikes/hike_:hikeId" render={ routerProps => <HikeContainer {...routerProps} hikes={ this.props.hikes } addAlertMessage={ this.props.addAlertMessage} currentUser={ this.props.currentUser }/> } />
               <Route path="/hikes" render={ routerProps => <HikesContainer {...routerProps} logged_in= { this.props.logged_in } hikes={ this.props.hikes } /> } />
               <Route path="/logout" render={ props => {
                 this.props.logout()
