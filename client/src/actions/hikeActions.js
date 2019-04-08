@@ -1,8 +1,6 @@
 import axios from 'axios';
 
 const HIKING_PROJECT_API_KEY = process.env.REACT_APP_HIKING_PROJECT_API_KEY;
-const API_URL = process.env.REACT_APP_API_URL;
-
 //Fetch hikes by coordinates
 
 export function fetchHikes(latitude, longitude, maxDistance, maxResults) {
