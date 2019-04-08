@@ -1,5 +1,5 @@
 import React from 'react';
-import HikeInfo from '.././components/Hikes/HikeInfo';
+import Hike from '.././components/Hikes/Hike';
 
 function HikeContainer({ match, hikes, currentUser, addAlertMessage }) {
   let id = +match.params.hikeId.replace((/hike_/), "")
@@ -16,7 +16,7 @@ function HikeContainer({ match, hikes, currentUser, addAlertMessage }) {
   )
 
   return (
-    <HikeInfo hike={ hike } />
+    <Hike hike={ hike } />
   )
 }
 
