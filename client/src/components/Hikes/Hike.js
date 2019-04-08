@@ -1,9 +1,6 @@
 import React from 'react';
 
-function Hike({ match, hikes }) {
-  let id = +match.params.hikeId.replace((/hike_/), "")
-  let hike = hikes.find(hike => hike.id === id)
-
+const Hike = ({ hike }) => {
   const difficulty = () => {
     let level;
     if (hike.difficulty === "blue") {
@@ -36,7 +33,6 @@ function Hike({ match, hikes }) {
       <img src={ hike.imgMedium} />
       <br></br>
       <p><small>{ hike.summary }</small></p>
-
     </div>
   )
 }
