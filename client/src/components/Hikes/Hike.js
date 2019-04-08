@@ -1,7 +1,6 @@
 import React from 'react';
 
 function Hike({ match, hikes }) {
-
   let id = +match.params.hikeId.replace((/hike_/), "")
   let hike = hikes.find(hike => hike.id === id)
 
