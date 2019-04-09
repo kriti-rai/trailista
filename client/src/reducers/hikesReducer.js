@@ -4,8 +4,6 @@ function hikesReducer(state=[], action) {
       return state;
     case 'FETCH_HIKES':
       return action.hikes.data.trails;
-    case 'FETCH_HIKE':
-      return action.hike.data.trails[0];
     default:
       return state;
   }
