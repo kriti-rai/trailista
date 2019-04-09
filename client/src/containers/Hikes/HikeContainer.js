@@ -1,5 +1,5 @@
 import React from 'react';
-import Hike from '.././components/Hikes/Hike';
+import Hike from '../.././components/Hikes/Hike';
 
 function HikeContainer({ match, hikes, currentUser, addAlertMessage }) {
   let id = +match.params.hikeId.replace((/hike_/), "")
