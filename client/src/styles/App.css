@@ -28,6 +28,9 @@
   }
 }
 
+
+/* ///////////////////USER REGISTRATION/////////////////// */
+
 .card {
 height: auto;
 margin-top: 100px;
@@ -128,4 +131,20 @@ margin-bottom: auto;
 padding: 10px;
 width: 800px;
 background-color: rgba(0,0,0,0.5) !important;
+}
+
+
+/* ERROR PAGE */
+
+.sad-face-icon {
+  font-size: 90px;
+  color: Dodgerblue;
+}
+
+.error-page-container {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding-top: 15%;
+min-height: 100vh;
 }
