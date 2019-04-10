@@ -5,13 +5,19 @@ Trailista (*or Trail-lister*) is a WIP that uses [The Hiking Project Data API](h
 As of now the available features are:
 
 - **Locate trails by location (city and country)**
-  ![search](https://media.giphy.com/media/VGhqaaqcnNNfghL4P3/giphy.gif)
+  <p align="center">
+    <img width="460" height="300" alt-text="search" src="https://media.giphy.com/media/VGhqaaqcnNNfghL4P3/giphy.gif)">
+  </p>
 
 - **Login and Registration**
-  ![login](https://media.giphy.com/media/IdgJsLzXBbQza0nbdW/giphy.gif)
+  <p align="center">
+    <img width="460" height="300" alt-text="login" src="https://media.giphy.com/media/IdgJsLzXBbQza0nbdW/giphy.gif)">
+  </p>
 
 - **Logged in users can save trails to their favorites list**
-  ![search](https://media.giphy.com/media/XcRAxM6W0AM2h3mOXb/giphy.gif)
+  <p align="center">
+    <img width="460" height="300" alt-text="favorite" src="https://media.giphy.com/media/XcRAxM6W0AM2h3mOXb/giphy.gif">
+  </p>
 
 
 ## Installation:
