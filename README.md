@@ -6,12 +6,12 @@ As of now the available features are:
 
 - **Locate trails by location (city and country)**
   <p align="center">
-    <img width="460" height="300" alt-text="search" src="https://media.giphy.com/media/VGhqaaqcnNNfghL4P3/giphy.gif)">
+    <img width="460" height="300" alt-text="search" src="https://media.giphy.com/media/VGhqaaqcnNNfghL4P3/giphy.gif">
   </p>
 
 - **Login and Registration**
   <p align="center">
-    <img width="460" height="300" alt-text="login" src="https://media.giphy.com/media/IdgJsLzXBbQza0nbdW/giphy.gif)">
+    <img width="460" height="300" alt-text="login" src="https://media.giphy.com/media/IdgJsLzXBbQza0nbdW/giphy.gif">
   </p>
 
 - **Logged in users can save trails to their favorites list**
