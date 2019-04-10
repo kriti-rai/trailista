@@ -14,25 +14,28 @@ body {
 }
 
 .main-container {
- min-height: 100vh; /* will cover the 100% of viewport */
- overflow: hidden;
+ min-height: 100%; /* will cover the 100% of viewport */
  display: block;
  position: relative;
- padding-bottom: 45px; /* height of your footer */
+}
+
+#root {
+  overflow: hidden;
+  padding-bottom: 2.5rem;
+  position: relative;
+  min-height: 100vh;
 }
 
 #footer {
- position: absolute;
+ position: relative;
+ margin-top: -2.5em;
+ clear: both;
  bottom: 0;
  width: 100%;
- color: black;
+ color: grey;
+ font-size: 14px;
 }
 
-/* #footer-content {
-  background-color: black;
-  opacity: 0.6;
-} */
-
-#github-link {
+.hyperlink {
   color: inherit;
 }

@@ -28,13 +28,15 @@
   padding-bottom: 2px;
 }
 
-
-/* ////////////////INDIVIDUAL HIKE PAGE////////////////////////*/
+/* ////////////////CONTAINERS////////////////////////*/
 
 .hikes-container {
   margin-top: 25px;
   margin-bottom: 25px;
 }
+
+ ////////////////INDIVIDUAL HIKE PAGE////////////////////////*/
+
 
 .hike-page-header {
   color: silver;
