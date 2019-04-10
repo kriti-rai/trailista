@@ -1,6 +1,17 @@
 # TRAILISTA
 
-Trailista (*or Trail-lister*) is a WIP that uses [The Hiking Project Data API](https://www.hikingproject.com/data) to extract hiking trails based on user's location input. As of now one can login/sign up, locate trails by location (city/country) and save trails to their favorites list. The app uses **React** in the front-end and a **Rails** backend API.
+Trailista (*or Trail-lister*) is a WIP that uses [The Hiking Project Data API](https://www.hikingproject.com/data) to extract hiking trails based on user's location input.
+
+As of now the available features are:
+
+- **Locate trails by location (city and country)**
+  ![search](https://media.giphy.com/media/VGhqaaqcnNNfghL4P3/giphy.gif)
+
+- **Login and Registration**
+  ![login](https://media.giphy.com/media/IdgJsLzXBbQza0nbdW/giphy.gif)
+
+- **Logged in users can save trails to their favorites list**
+  ![search](https://media.giphy.com/media/XcRAxM6W0AM2h3mOXb/giphy.gif)
 
 
 ## Installation:
@@ -15,13 +26,16 @@ Trailista (*or Trail-lister*) is a WIP that uses [The Hiking Project Data API](h
   - Run `npm install`
 - Go back to the root directory and run `rake start`
 
+
 ## Frameworks and Libraries Used
 
-- Front-end: JavaScript libraries (React, Redux)
-- Back-end: Ruby on Rails
+- Front-end: JavaScript libraries ([React](https://reactjs.org/), [Redux](https://redux.js.org/))
+- [Redux Thunk middleware](https://github.com/reduxjs/redux-thunk)
+- Back-end: [Ruby on Rails](https://github.com/rails/rails)
 - [Hiking Project Data API](https://www.hikingproject.com/data)
 - [Mapbox API](https://docs.mapbox.com/api/search/#geocoding)
-- Bootstrap
+- [Bootstrap](https://getbootstrap.com/)
+- [Axios](https://github.com/axios/axios)
 
 
 ## Author
