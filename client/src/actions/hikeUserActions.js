@@ -18,7 +18,11 @@ export function favorite(token, hikeData) {
           type: 'FAVORITE',
           payload: response.data
       })
-    )};
+    )
+    .catch(error => {
+          dispatch({ type: 'ADD_ALERT_MESSAGE', message: error.response.data})
+      })
+  };
 }
 
 export function deleteFavorite(token, id) {
