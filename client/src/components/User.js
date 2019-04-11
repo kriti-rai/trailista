@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { deleteFavorite } from '.././actions/hikeUserActions';
+import { clearFavorites, deleteFavorite } from '.././actions/hikeUserActions';
 import FavoritesContainer from '.././containers/FavoritesContainer';
 
 class User extends Component {
@@ -42,7 +42,7 @@ class User extends Component {
           <p><i className="fas fa-map-marker-alt"></i> <small>{ this.props.currentUser.location }</small></p>
           <p><small>Member since: { this.createdAt(this.props.currentUser.created_at) }</small></p>
           <hr></hr>
-          <FavoritesContainer favHikes={ this.props.favHikes } deleteFavorite={ this.props.deleteFavorite } />
+          <FavoritesContainer favHikes={ this.props.favHikes } token={ this.props.token } clearFavorites={ this.props.clearFavorites } deleteFavorite={ this.props.deleteFavorite } />
         </div>
       </div>
       </>
@@ -57,4 +57,4 @@ const mapStateToProps = state => {
   })
 }
 
-export default connect(mapStateToProps, { deleteFavorite })(User);
+export default connect(mapStateToProps, {clearFavorites, deleteFavorite })(User);
