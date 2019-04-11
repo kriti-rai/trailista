@@ -28,7 +28,7 @@ function userReducer(state={logged_in: "false", loading: "false", token: "", inf
         logged_in: window.localStorage.getItem('logged_in'),
         loading: "false",
         info: user,
-        favHikes: action.payload.fav_hikes
+        favHikes: action.payload.hikes
       }
     case 'LOGOUT':
       return {...state, logged_in: "false", loading: "false", token: "", info: {}, favHikes: []};
