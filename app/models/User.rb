@@ -19,7 +19,7 @@ class User < ApplicationRecord
   end
 
   def remove_all_favorites
-    self.fav_hikes.clear
+    self.hikes.clear
   end
 
 
