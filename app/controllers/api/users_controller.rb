@@ -29,20 +29,19 @@ class Api::UsersController < ApplicationController
 
   def add_favorite
     #when this action is called, create hike object and save to db
-    hike = Hike.new(hike_params)
+    hike = Hike.find_by_id(hike_params["id"]) || Hike.new(hike_params)
     @user.add_to_favorite(hike)
-    render json: @user.fav_hikes, status: 200
+    render json: @user.hikes, status: 200
   end
 
   def delete_favorite
-    hike = Hike.find(params["hike_id"])
-    @user.delete_favorite(hike)
-    render json: @user.fav_hikes, status: 200
+    @user.delete_favorite(params["hike_id"])
+    render json: @user.hikes, status: 200
   end
 
   def clear_favorites
     @user.remove_all_favorites
-    render json: @user.fav_hikes, status: 200
+    render json: @user.hikes, status: 200
   end
 
   private
