@@ -4,11 +4,7 @@ import { clearFavorites, deleteFavorite } from '.././actions/hikeUserActions';
 import FavoritesContainer from '.././containers/FavoritesContainer';
 
 class User extends Component {
-
-  componentDidMount() {
-    this.props.fetchCurrentUser(this.props.token);
-  }
-
+  
   createdAt = (date) => {
     let d = new Date(date)
     let monthNames = [
