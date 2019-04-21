@@ -12,7 +12,7 @@ import Login from './containers/UserRegistration/Login';
 import About from './components/About';
 import User from './components/User';
 import Home from './components/Home';
-import HikesContainer from './containers/HikesContainer';
+import HikesContainer from './containers/Hikes/HikesContainer';
 import HikeContainer from './containers/Hikes/HikeContainer';
 import AlertsList from './components/Alerts/AlertsList';
 import { fetchHikes } from './actions/hikeActions';
@@ -23,20 +23,15 @@ import { addAlertMessage } from './actions/alertsActions';
 
 class App extends Component {
 
-  // componentDidMount() {
-  //   this.props.fetchHikes();
-  // }
-
   render() {
     return (
       <div className="App">
         <Router>
-          <Navbar logged_in={ this.props.logged_in } />
+          <Navbar logged_in={ this.props.logged_in } currentUser={ this.props.currentUser } />
           <AlertsList />
             <Switch>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" render={ routerProps => <Home {...routerProps} fetchCurrentUser= { this.props.fetchCurrentUser } /> } />
               <Route exact path="/about" component={About} />
-              <PrivateRoute exact path="/user" component={User} token={ this.props.token} fetchCurrentUser={ this.props.fetchCurrentUser } />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Register} />
               <Route path="/hikes/hike_:hikeId" render={ routerProps => <HikeContainer {...routerProps} hikes={ this.props.hikes } addAlertMessage={ this.props.addAlertMessage} currentUser={ this.props.currentUser }/> } />
@@ -45,6 +40,7 @@ class App extends Component {
                 this.props.logout()
                 return <Redirect to = '/' />
               }} />
+              <PrivateRoute exact path="/:username" component={User} token={ this.props.token} fetchCurrentUser={ this.props.fetchCurrentUser } />
               <Route render={() => <h2 class="400-error">404 Error - Page not found</h2>} />
             </Switch>
         </Router>
