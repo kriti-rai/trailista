@@ -4,13 +4,12 @@ import { NavLink } from "react-router-dom";
 
 function Navbar(props) {
   let logged_in = (props.logged_in === "true") ? true : false;
-
   let showTabs;
 
   if (logged_in) {
     showTabs = (
       <>
-        <NavLink to='/user' activeClassName="selected-tab" className="nav-link"><span className="tab-tab-title">My Profile</span></NavLink>
+        <NavLink to={ "/" + props.currentUser.info.username } activeClassName="selected-tab" className="nav-link"><span className="tab-tab-title">My Profile</span></NavLink>
         <NavLink to='/logout' activeClassName="selected-tab" className="nav-link"><span className="tab-title">Logout</span></NavLink>
       </>
     )
