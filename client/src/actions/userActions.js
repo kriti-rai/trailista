@@ -64,7 +64,7 @@ export function logout() {
     }
 }
 
-export function fetchCurrentUser(token, callback) {
+export function fetchCurrentUser(token) {
   return (dispatch) => {
     dispatch({ type: "LOADING_USER_INFO" })
     if (token) {
