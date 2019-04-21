@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SearchHikes from './Hikes/SearchHikes';
 
 class Home extends Component {
 
@@ -12,14 +11,10 @@ class Home extends Component {
   render() {
     return  (
       <>
-      <div className="main-container">
-        <div className="home-container">
-          <div className="container">
-            <div className="d-flex justify-content-center h-100">
-              <p className="welcome-msg">Welcome to Trailista</p>
-            </div>
-          </div>
-         </div>
+        <div class='home-container'>
+          <div className='welcome-msg'>Welcome to Trailista</div>
+          <div className='welcome-sub-msg'>Your trail is waiting. Get on your way.</div>
+          <br></br><button className="btn btn-light btn-sm">Explore Trails</button>
         </div>
       </>
     )
