@@ -68,7 +68,8 @@ h3.card-header {
 
 /* LOGIN */
 .login {
- background-image: url('.././images/joshua.jpg');
+ /* background-image: url('.././images/joshua.jpg'); */
+ background-image: url('.././images/unsplash4.jpeg');
  background-repeat: no-repeat;
  background-attachment: fixed;
  background-size: cover;
@@ -98,7 +99,7 @@ background-color: white;
 
 /* SIGNUP */
 .signup {
- background-image: url('.././images/jomsom.jpg');
+ background-image: url('.././images/unsplash8.jpeg');
  background-repeat: no-repeat;
  background-attachment: fixed;
  background-size: cover;
@@ -147,7 +148,7 @@ background-color: white;
 
 /*ABOUT */
 .about {
- background-image: url('.././images/grandcanyon.jpg');
+ background-image: url('.././images/unsplash6.jpeg');
  background-repeat: no-repeat;
  background-attachment: fixed;
  background-size: cover;
@@ -156,7 +157,7 @@ background-color: white;
 
 .about-card {
 height: auto;
-margin-top: 100px;
+margin-top: 150px;
 margin-bottom: auto;
 padding: 10px;
 width: 800px;
