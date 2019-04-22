@@ -37,11 +37,11 @@ class HikeCard extends Component {
       <div className="hike-card">
         { this.props.logged_in === "true" ? <button className="fav-btn" onClick={ this.handleClick } ><i className="fas fa-heart"></i></button> : null }
         <img className="hike-card-image" src= { showImage } />
-        <div className="hike-info">
-          <h6>{  hike.name }</h6>
-          <small>Difficulty: { difficulty() }</small>
-          <br></br>
-          <small>Rating: { hike.stars }</small>
+        <div className="hike-card-info">
+          <div className='hike-card-title'>{  hike.name }</div>
+          <div className='hike-card-location'>{ hike.location }</div>
+          <div className='hike-card-difficulty'>Difficulty: { difficulty() }</div>
+          <div className='hike-card-rating'>Rating: { hike.stars }</div>
         </div>
       </div>
     )
