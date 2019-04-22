@@ -8,8 +8,11 @@ function About() {
           <div className='about-card'>
             <h3 className="card-header">About</h3>
             <p><font color="white">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <small>Trailista makes it easy for you to find trails around you. Just enter the city and country (if outside the U.S.) and
+                voila! you get a list of trails, each with all the details you need such as,
+                the difficulty level, a brief overview, overall rating and trail conditions. With this info,
+                now you can hike with confidence anytime and anywhere. Let this encourage you to be in the nature very so often
+                as you need to cleanse your mind and soul and stay fit.</small>
               </font>
             </p>
           </div>
