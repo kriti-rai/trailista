@@ -1,10 +1,10 @@
 /* ///////////////HIKE CARD /////////////////*/
 
 .hike-card {
-  color: grey;
+  color: white;
   border-radius: 2px;
   display: inline-block;
-  height: 300px;
+  height: 400px;
   margin: 1.5%;
   float: left;
   position: relative;
@@ -23,9 +23,19 @@
 }
 
 .hike-info {
-  padding-top: 45px;
+  padding-top: 35px;
+  font-family: 'Open Sans', sans-serif;
+  height: 45%;
   background-color: black;
-  padding-bottom: 2px;
+}
+
+
+/* ////////////////SEARCHHIKE FORM////////////////////////*/
+
+.search-hike-form {
+  padding-left: 13px;
+  padding-right: 30px;
+  padding-bottom: 15px;
 }
 
 /* ////////////////CONTAINERS////////////////////////*/
@@ -33,10 +43,9 @@
 .hikes-container {
   margin-top: 25px;
   margin-bottom: 25px;
+  background-size: cover;
+  min-height: 100vh;
 }
-
- /* ////////////////INDIVIDUAL HIKE PAGE////////////////////////*/ */
-
 
 .hike-page-header {
   color: silver;
@@ -61,6 +70,10 @@
 }
 
 .fav-btn i:hover {
+  color: red;
+}
+
+.fav-btn i:active {
   color: red;
 }
 
