@@ -31,10 +31,12 @@ class HikeCard extends Component {
       return level;
     }
 
+    const showImage = !!hike.imgMedium ? hike.imgMedium: process.env.PUBLIC_URL + '/images/no_trail_image.jpg';
+
     return (
       <div className="hike-card">
         { this.props.logged_in === "true" ? <button className="fav-btn" onClick={ this.handleClick } ><i className="fas fa-heart"></i></button> : null }
-        <img className="hike-card-image" src= { hike.imgMedium} />
+        <img className="hike-card-image" src= { showImage } />
         <div className="hike-info">
           <h6>{  hike.name }</h6>
           <small>Difficulty: { difficulty() }</small>
