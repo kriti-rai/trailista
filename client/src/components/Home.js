@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from "react-router-dom";
 
 class Home extends Component {
 
@@ -8,13 +9,17 @@ class Home extends Component {
        this.props.fetchCurrentUser(token);
      }
   }
+
   render() {
+    const handleClick = ()=> {
+     this.props.history.push('/hikes')
+    }
     return  (
       <>
-        <div class='home-container'>
+        <div className='home-container'>
           <div className='welcome-msg'>Welcome to Trailista</div>
           <div className='welcome-sub-msg'>Your trail is waiting. Get on your way.</div>
-          <br></br><button className="btn btn-light btn-sm">Explore Trails</button>
+          <br></br><button onClick={ handleClick } className="btn btn-light btn-sm">Explore Trails</button>
         </div>
       </>
     )
