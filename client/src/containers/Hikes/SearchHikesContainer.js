@@ -33,7 +33,7 @@ class SearchHikesContainer extends Component {
 
   getCoordinates= (e) => { //takes address input and converts it into coordinates via mapbox api
     e.preventDefault();
-    axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${this.state.city}.json?country=${this.state.countryCode}&access_token=pk.eyJ1Ijoia3JpdGktcmFpIiwiYSI6ImNqdTY3dXA2djFncnY0M256eGVqNHA5bWUifQ.GmR07xGWG6xWmOMHPMLOJA`)
+    axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${this.state.city}.json?country=${this.state.countryCode}&access_token=${process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}`)
       .then(resp => {
         this.setState({
           longitude: resp.data.features[0].geometry.coordinates[0],
