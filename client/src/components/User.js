@@ -32,17 +32,19 @@ class User extends Component {
     }
     return (
       <>
-      <div className='profile-container'>
-        <img className="profile-pic" src={ userImage } alt="profile-pic" />
-        <div className='user-data'>
-          <h3><em>{currentUser.username}</em></h3>
-          <h3>{ currentUser.firstName } { currentUser.lastName }</h3>
-          <p><i className="fas fa-map-marker-alt"></i> <small>{ currentUser.location }</small></p>
-          <p><small>Member since: { this.createdAt(currentUser.created_at) }</small></p>
-          <hr></hr>
-          <FavoritesContainer favHikes={ currentUser.hikes } token={ this.props.token } clearFavorites={ this.props.clearFavorites } deleteFavorite={ this.props.deleteFavorite } />
+        <div className='profile-container'>
+          <img className="profile-pic" src={ userImage } alt="profile-pic" />
+          <div className='user-data'>
+            <h3><em>{currentUser.username}</em></h3>
+            <h3>{ currentUser.firstName } { currentUser.lastName }</h3>
+            <p><i className="fas fa-map-marker-alt"></i> <small>{ currentUser.location }</small></p>
+            <p><small>Member since: { this.createdAt(currentUser.created_at) }</small></p>
+            <hr></hr>
+            <div className="favorites-container">
+              <FavoritesContainer favHikes={ currentUser.hikes } token={ this.props.token } clearFavorites={ this.props.clearFavorites } deleteFavorite={ this.props.deleteFavorite } />
+            </div>
+          </div>
         </div>
-      </div>
       </>
     )
   }
