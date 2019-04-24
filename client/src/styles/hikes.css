@@ -91,7 +91,7 @@
   padding-top: 10px;
 }
 
-.summary {
+.summary, .favorite-hike {
   font-family: 'Open Sans', sans-serif;
   font-size: 13px;
 }
@@ -107,6 +107,17 @@
 
 .hike-page-header {
   color: silver;
+}
+
+.favorites-container {
+  margin: 0 auto;
+  width: 200px;
+}
+
+.favorites-list {
+  text-align: left;
+  margin: 0 auto;
+  width: 500px;
 }
 
 /* ////////////////////////ADD HIKE TO FAVORITE/////////////////////// */
@@ -139,12 +150,12 @@
 /* ///////////////////////////////DELETE HIKE FROM FAVORITES ////////////////////////// */
 
 .del-btn {
-  padding: 0;
+  padding: 0.5;
   border: none;
   background: none;
 }
 
 #del-btn {
-  color: red;
-  size: 1px;
+  color: silver;
+  font-size: 11px;
 }
