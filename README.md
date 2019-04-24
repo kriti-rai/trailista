@@ -1,22 +1,26 @@
 # TRAILISTA
 
+<p align="center">
+  <img width="460" height="300" alt-text="home_page" src="https://i.imgur.com/fla25b0.jpg">
+</p>
+
 Trailista (*or Trail-lister*) is a WIP that uses [The Hiking Project Data API](https://www.hikingproject.com/data) to extract hiking trails based on user's location input.
 
 As of now the available features are:
 
 - **Locate trails by location (city and country)**
   <p align="left">
-    <img width="460" height="300" alt-text="search" src="https://media.giphy.com/media/VGhqaaqcnNNfghL4P3/giphy.gif">
+    <img width="460" height="300" alt-text="search" src="https://media.giphy.com/media/lrbwszQmty9ybUdBQs/giphy.gif">
   </p>
 
 - **Login and Registration**
   <p align="left">
-    <img width="460" height="300" alt-text="login" src="https://media.giphy.com/media/IdgJsLzXBbQza0nbdW/giphy.gif">
+    <img width="460" height="300" alt-text="login" src="https://media.giphy.com/media/j0verhIyrSczORIdK0/giphy.gif">
   </p>
 
 - **Logged in users can save trails to their favorites list**
   <p align="left">
-    <img width="460" height="300" alt-text="favorite" src="https://media.giphy.com/media/XcRAxM6W0AM2h3mOXb/giphy.gif">
+    <img width="460" height="300" alt-text="favorite" src="https://media.giphy.com/media/mDXrTRqf6EMfTAyNat/giphy.gif">
   </p>
 
 
@@ -33,7 +37,7 @@ As of now the available features are:
 - Go back to the root directory and run `rake start`
 
 
-## Frameworks and Libraries Used
+## Frameworks, Libraries, and Resources
 
 - Front-end: JavaScript libraries ([React](https://reactjs.org/), [Redux](https://redux.js.org/))
 - [Redux Thunk middleware](https://github.com/reduxjs/redux-thunk)
@@ -42,6 +46,7 @@ As of now the available features are:
 - [Mapbox API](https://docs.mapbox.com/api/search/#geocoding)
 - [Bootstrap](https://getbootstrap.com/)
 - [Axios](https://github.com/axios/axios)
+- [Unsplash](https://unsplash.com) for background images
 
 
 ## Author
