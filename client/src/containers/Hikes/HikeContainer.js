@@ -9,8 +9,8 @@ function HikeContainer({ match, hikes, currentUser, addAlertMessage }) {
   if (hikes.length > 0 && hikes.find(hike => hike.id === id)) {
     hike = hikes.find(hike => hike.id === id)
     return <Hike hike={ hike } />
-  } else if ( currentUser.favHikes.length > 0 && currentUser.favHikes.find(favHike => favHike.id === id)){
-    hike = currentUser.favHikes.find(favHike => favHike.id === id)
+  } else if ( currentUser.hikes.length > 0 && currentUser.hikes.find(favHike => favHike.id === id)){
+    hike = currentUser.hikes.find(favHike => favHike.id === id)
     return <Hike hike={ hike } />
   } else {
     return <ErrorPage />
