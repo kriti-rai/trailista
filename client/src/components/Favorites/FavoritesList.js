@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Favorite from './Favorite';
 
 function FavoritesList(props) {
@@ -12,9 +12,9 @@ function FavoritesList(props) {
   }
 
   return (
-    <>
+    <div className="favorites-list">
       { renderList }
-    </>
+    </div>
   )
 }
 
