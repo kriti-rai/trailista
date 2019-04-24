@@ -3,7 +3,7 @@ import {countries} from '../.././components/Constants';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { fetchHikes } from '../.././actions/hikeActions';
-import SearchHikes from '../.././components/Hikes/SearchHikes';
+import SearchHikesForm from '../.././components/Hikes/SearchHikesForm';
 
 class SearchHikesContainer extends Component {
   state = {
@@ -47,7 +47,7 @@ class SearchHikesContainer extends Component {
   render() {
     return (
       <>
-        <SearchHikes country={ this.state.country } maxDistance={ this.state.maxDistance } getCoordinates={ this.getCoordinates } handleChange={ this.handleChange } handleChangeCountry={ this.handleChangeCountry }/>
+        <SearchHikesForm country={ this.state.country } maxDistance={ this.state.maxDistance } getCoordinates={ this.getCoordinates } handleChange={ this.handleChange } handleChangeCountry={ this.handleChangeCountry }/>
       </>
     )
   }
