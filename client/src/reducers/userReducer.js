@@ -1,4 +1,4 @@
-function userReducer(state={logged_in: "false", loading: "false", token: "", info: {}, favHikes: []}, action) {
+function userReducer(state={logged_in: "false", loading: "false", currentUser: {}, token: ""}, action) {
   switch (action.type) {
     case 'LOADING_USER_INFO':
       return {...state, loading: "true"};
@@ -14,24 +14,14 @@ function userReducer(state={logged_in: "false", loading: "false", token: "", inf
         };
       }
     case 'FETCH_USER':
-      var user = {
-        username: action.payload.username,
-        firstName: action.payload.firstname,
-        lastName: action.payload.lastname,
-        email: action.payload.email,
-        image: action.payload.image,
-        location: action.payload.location,
-        created_at: action.payload.created_at
-      }
       return {
         ...state,
         logged_in: window.localStorage.getItem('logged_in'),
         loading: "false",
-        info: user,
-        favHikes: action.payload.hikes
+        currentUser: action.payload
       }
     case 'LOGOUT':
-      return {...state, logged_in: "false", loading: "false", token: "", info: {}, favHikes: []};
+      return {...state, logged_in: "false", loading: "false", token: "", currentUser: {}};
     case 'FAVORITE':
       return  {...state, favHikes: state.favHikes.concat(action.payload)}
     case 'DELETE_FAVORITE':
