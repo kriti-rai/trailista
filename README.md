@@ -53,7 +53,8 @@ As of now the available features are:
 
 - [Kriti Rai](https://github.com/kriti-rai)
 
-## [Blog Post](https://dev.to/kritirai/my-react-redux-portfolio-project-2h4k)
+## Blog Post
+  [1](https://dev.to/kritirai/my-react-redux-portfolio-project-2h4k) and [2](http://icodeyounot.com/react_redux_portfolio_project)
 
 
 ## Contributing
