@@ -5,7 +5,7 @@ export default class Alert extends React.Component {
   componentDidMount() {
     this.timer = setTimeout( () =>
       this.props.removeAlert(this.props.alert.id),
-      4000
+      2000
     );
   }
 
