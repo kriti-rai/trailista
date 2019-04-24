@@ -4,7 +4,7 @@ import { clearFavorites, deleteFavorite } from '.././actions/hikeUserActions';
 import FavoritesContainer from '.././containers/FavoritesContainer';
 
 class User extends Component {
-  
+
   createdAt = (date) => {
     let d = new Date(date)
     let monthNames = [
@@ -22,9 +22,11 @@ class User extends Component {
   }
 
   render() {
+    const currentUser = this.props.currentUser;
+
     let userImage;
-    if (!!this.props.currentUser.image) {
-      userImage = this.props.currentUser.image;
+    if (!!currentUser.image) {
+      userImage = currentUser.image;
     } else {
       userImage = process.env.PUBLIC_URL + '/images/no_image.png';
     }
@@ -33,12 +35,12 @@ class User extends Component {
       <div className='profile-container'>
         <img className="profile-pic" src={ userImage } alt="profile-pic" />
         <div className='user-data'>
-          <h3><em>{this.props.currentUser.username}</em></h3>
-          <h3>{ this.props.currentUser.firstName } { this.props.currentUser.lastName }</h3>
-          <p><i className="fas fa-map-marker-alt"></i> <small>{ this.props.currentUser.location }</small></p>
-          <p><small>Member since: { this.createdAt(this.props.currentUser.created_at) }</small></p>
+          <h3><em>{currentUser.username}</em></h3>
+          <h3>{ currentUser.firstName } { currentUser.lastName }</h3>
+          <p><i className="fas fa-map-marker-alt"></i> <small>{ currentUser.location }</small></p>
+          <p><small>Member since: { this.createdAt(currentUser.created_at) }</small></p>
           <hr></hr>
-          <FavoritesContainer favHikes={ this.props.favHikes } token={ this.props.token } clearFavorites={ this.props.clearFavorites } deleteFavorite={ this.props.deleteFavorite } />
+          <FavoritesContainer favHikes={ currentUser.hikes } token={ this.props.token } clearFavorites={ this.props.clearFavorites } deleteFavorite={ this.props.deleteFavorite } />
         </div>
       </div>
       </>
@@ -46,11 +48,5 @@ class User extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return ({
-    currentUser: state.user.info,
-    favHikes: state.user.favHikes
-  })
-}
 
-export default connect(mapStateToProps, {clearFavorites, deleteFavorite })(User);
+export default connect(null, {clearFavorites, deleteFavorite })(User);
