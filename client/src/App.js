@@ -40,7 +40,7 @@ class App extends Component {
                 this.props.logout()
                 return <Redirect to = '/' />
               }} />
-              <PrivateRoute exact path="/:username" component={User} token={ this.props.token} fetchCurrentUser={ this.props.fetchCurrentUser } />
+              <PrivateRoute exact path="/:username" component={User} token={ this.props.token} currentUser={ this.props.currentUser } />
               <Route render={() => <h2 class="400-error">404 Error - Page not found</h2>} />
             </Switch>
         </Router>
@@ -53,7 +53,7 @@ const mapStateToProps = (state) => {
   return {
       hikes: state.hikes,
       token: state.user.token,
-      currentUser: state.user,
+      currentUser: state.user.currentUser,
       logged_in: state.user.logged_in
     }
 }
