@@ -12,7 +12,7 @@ function Favorite(props) {
 
   return (
     <>
-      <span className="lead"><Link to={`/hikes/hike_${id}`}>{ name } </Link> <button className="del-btn" onClick={ handleClick }><i id="del-btn" className="fas fa-minus-circle"> </i></button></span>
+      <span className="favorite-hike"><Link to={`/hikes/hike_${id}`}>{ name } </Link> <button className="del-btn" onClick={ handleClick }><i id="del-btn" className="fas fa-trash"> </i></button></span>
       <br></br>
     </>
   )
