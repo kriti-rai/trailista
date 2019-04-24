@@ -1,7 +1,7 @@
 # TRAILISTA
 
 <p align="center">
-  <img width="460" height="300" alt-text="home_page" src="https://i.imgur.com/fla25b0.jpg">
+  <img width="500" height="300" alt-text="home_page" src="https://i.imgur.com/fla25b0.jpg">
 </p>
 
 Trailista (*or Trail-lister*) is a WIP that uses [The Hiking Project Data API](https://www.hikingproject.com/data) to extract hiking trails based on user's location input.
@@ -52,6 +52,8 @@ As of now the available features are:
 ## Author
 
 - [Kriti Rai](https://github.com/kriti-rai)
+
+## [Blog Post](https://dev.to/kritirai/my-react-redux-portfolio-project-2h4k)
 
 
 ## Contributing
