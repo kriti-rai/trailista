@@ -17,8 +17,7 @@ import HikeContainer from './containers/Hikes/HikeContainer';
 import AlertsList from './components/Alerts/AlertsList';
 import { fetchHikes } from './actions/hikeActions';
 import { connect } from 'react-redux';
-import { logout } from './actions/userActions';
-import { fetchCurrentUser } from './actions/userActions';
+import { logout, fetchCurrentUser } from './actions/userActions';
 import { addAlertMessage } from './actions/alertsActions';
 
 class App extends Component {
