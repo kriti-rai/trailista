@@ -4,15 +4,42 @@
 
 .hike-card {
   color: white;
-  border-radius: 2px;
   display: inline-block;
-  height: 375px;
+  height: 365px;
   margin: 1.5%;
   float: left;
   position: relative;
-  width: 17%;
+  width: 21%;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+/* Mobile */
+@media all and (min-width: 320px) and (max-width: 425px) {
+  .hike-card {
+    width: 75%;
+    margin: 5%;
+  }
+}
+
+@media all and (min-width: 320px) and (max-width: 425px) {
+  .hikes-list {
+    padding-left: 15%;
+  }
+}
+
+/* Tablet */
+@media all and (min-width: 426px) and (max-width: 768px) {
+  .hike-card {
+    width: 40%;
+    margin: 4%;
+  }
+}
+
+@media all and (min-width: 426px) and (max-width: 768px), (min-width: 769px) {
+  .hikes-list {
+    padding-left: 5%;
+  }
 }
 
 .hike-card:hover {
@@ -105,6 +132,10 @@
   min-height: 100vh;
 }
 
+/* .hikes-list {
+  padding-left: 4%;
+} */
+
 .hike-page-header {
   color: silver;
 }
@@ -125,7 +156,7 @@
 .fav-btn {
   position: absolute;
   top: 10%;
-  left: 15%;
+  left: 40px;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   background-color: black;
