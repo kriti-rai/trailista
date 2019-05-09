@@ -110,9 +110,6 @@ background-color: white;
 
 .home-container {
  background-image: url('.././images/unsplash2.jpeg');
- /* background-repeat: no-repeat;
- background-attachment: fixed; */
- /* background-color: rgb(173,213,209); */
  background-size: cover;
  min-height: 100vh;
 }
