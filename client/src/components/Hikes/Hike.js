@@ -22,7 +22,7 @@ const Hike = ({ hike }) => {
   return (
     <div className="hikes-container">
       <h3 className="display-4 hike-page-header">{ hike.name }</h3>
-      <p className="display-5 hike-page-header">{ hike.location }</p>
+      <p className="display-5 hike-page-sub-header">{ hike.location }</p>
       <div className="hike-card-container">
         <div className="hike-info-card">
           <div className="hike-info-title"><i id="hike-info-hike-icon" className="fas fa-hiking"></i>&nbsp; Trail</div>
@@ -31,7 +31,7 @@ const Hike = ({ hike }) => {
           <div className='hike-info'>Rating: <strong>{ hike.stars }</strong></div>
         </div>
         <div className="hike-info-card">
-          <div className="hike-info-title"><i className="fas fa-mountain"></i>&nbsp; Elevation</div>
+          <div className="hike-info-title"><i d="hike-info-mountain-icon" className="fas fa-mountain"></i>&nbsp; Elevation</div>
           <div className='hike-info'>Ascent: <strong>{ hike.ascent }'</strong></div>
           <div className='hike-info'>Descent: <strong>{ hike.descent }'</strong></div>
           <div className='hike-info'>High: <strong>{ hike.high }'</strong></div>
@@ -41,7 +41,7 @@ const Hike = ({ hike }) => {
       <br></br>
       <img className="hike-image" src={ hike.imgMedium} />
       <br></br>
-      <p><strong>Overview:</strong> <span  className='summary'>{ hike.summary }</span></p>
+      <p><span className="hike-page-overview-header">Overview:</span><span  className='summary'>{ hike.summary }</span></p>
     </div>
   )
 }
