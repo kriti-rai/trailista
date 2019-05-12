@@ -31,7 +31,7 @@ const Hike = ({ hike }) => {
           <div className='hike-info'>Rating: <strong>{ hike.stars }</strong></div>
         </div>
         <div className="hike-info-card">
-          <div className="hike-info-title"><i d="hike-info-mountain-icon" className="fas fa-mountain"></i>&nbsp; Elevation</div>
+          <div className="hike-info-title"><i id="hike-info-mountain-icon" className="fas fa-mountain"></i>&nbsp; Elevation</div>
           <div className='hike-info'>Ascent: <strong>{ hike.ascent }'</strong></div>
           <div className='hike-info'>Descent: <strong>{ hike.descent }'</strong></div>
           <div className='hike-info'>High: <strong>{ hike.high }'</strong></div>
@@ -39,7 +39,7 @@ const Hike = ({ hike }) => {
         </div>
       </div>
       <br></br>
-      <img className="hike-image" src={ hike.imgMedium} />
+      <p><img className="hike-image" src={ hike.imgMedium} /></p>
       <br></br>
       <p><span className="hike-page-overview-header">Overview:</span><span  className='summary'>{ hike.summary }</span></p>
     </div>
