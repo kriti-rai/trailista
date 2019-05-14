@@ -213,6 +213,7 @@
   font-size: 3.5vw;
 }
 
+
 /* TABLETS */
 @media screen and (min-width: 426px) and (max-width: 768px){
   .hike-card-container {
@@ -244,8 +245,12 @@
 
 /* LAPTOP + */
 @media screen and (min-width: 769px) {
+  .hike-info-card {
+    width: 250px;
+  }
+
   .hike-card-container {
-    margin-left: 5%;
+    margin-left: 15%
   }
 
   .display-4.hike-page-header {
@@ -257,24 +262,28 @@
   }
 
   .hike-info-title {
-    font-size: 20px;
+    font-size: 25px;
   }
 
   #hike-info-hike-icon {
-    font-size: 22px;
-    padding-right: 3px;
+    font-size: 25px;
+    padding-right: 6px;
   }
 
   #hike-info-mountain-icon {
-    font-size: 15px;
+    font-size: 20px;
     padding-right: 3px;
   }
 
   .hike-info {
     font-size: 15px;
-    font-family: 'Open Sans', sans-serif;
-    text-align: left;
-    padding-left: 11%;
+    padding-left: 40px;
+  }
+
+  .hike-image {
+    padding: 10px;
+    width: 40%;
+    height: auto;
   }
 
   .summary {
