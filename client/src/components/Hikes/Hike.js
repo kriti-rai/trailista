@@ -40,7 +40,6 @@ const Hike = ({ hike }) => {
           </div>
         </div>
         <br></br>
-        <br></br>
         <p><img className="hike-image" src={ hike.imgMedium} /></p>
         <p className='summary'>Overview: { hike.summary }</p>
       </div>
