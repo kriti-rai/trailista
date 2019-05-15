@@ -18,7 +18,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: trailista
+  username: kritirai
   password: <%= ENV['TRAILISTA_DATABASE_PASSWORD'] %>
 
 development:
@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: trailista_production
-  username: trailista
+  username: kritirai
   password: <%= ENV['TRAILISTA_DATABASE_PASSWORD'] %>
