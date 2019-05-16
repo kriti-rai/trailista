@@ -13,7 +13,7 @@ const SearchHikesForm = (props) => {
             <CountryDropdown className='form-control' name="countryCode" value={ props.country } onChange={ (val) => props.handleChangeCountry(val)} />
           </div>
           <div>
-            <span className="input-group-text">Max Distance</span>
+            <span className="input-group-text">Max Dist</span>
           </div>
           <div className="max-distance-input">
             <input className='form-control' type="number" value={ props.maxDistance } name="maxDistance"  onChange={ props.handleChange }/>
