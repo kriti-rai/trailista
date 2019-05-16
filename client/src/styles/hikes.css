@@ -83,7 +83,7 @@
 
 .search-button {
   background-color: #bfcd7e;
-  font-size: 21px;
+  font-size: 22px;
 }
 
 .city-input {
@@ -112,7 +112,7 @@
 }
 
 /* Mobile */
-@media screen and (max-width: 425px){
+@media all and (max-width: 425px){
   .city-input {
     width: 275px;
     margin-bottom: 10px;
@@ -125,7 +125,7 @@
     margin-left: 3%;
   }
   .max-distance-input {
-    width: 100px;
+    width: 110px;
     margin-left: 6%;
     margin-right: 3%;
   }
@@ -135,12 +135,21 @@
     margin-left: 7%;
     margin-right: 7%;
   }
+  .search-button {
+    font-size: 20px;
+  }
 }
 
 /* Tablet */
-@media screen and (min-width: 426px) and (max-width: 768px) {
+@media all and (min-width: 426px) and (max-width: 768px) {
+  .city-input {
+    width: 12vw;
+  }
   .country-input {
-    width: 30%;
+    width: 30vw;
+  }
+  .max-distance-input {
+    width: 12vw;
   }
   .input-group-text {
     height: 40px;
@@ -213,13 +222,24 @@
   margin-top: 5%;
 }
 
-.summary, .favorite-hike {
+.summary {
   font-family: 'Open Sans', sans-serif;
   font-size: 2.5vw;
 }
 
+.favorite-hike {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 4.5vw;
+}
+
+@media all and (max-width: 425px) {
+  .favorite-hike {
+    font-size: 5.5vw;
+  }
+}
+
 /* TABLETS */
-@media screen and (min-width: 426px) and (max-width: 768px){
+@media all and (min-width: 426px) and (max-width: 768px) {
   .hike-infocard-container {
     margin-left: 22vw;
   }
@@ -255,20 +275,28 @@
   .summary {
     font-size: 18px;
   }
+
+  .favorite-hike {
+    font-size: 3.5vw;
+  }
 }
 
 /* LAPTOP + */
-@media screen and (min-width: 769px) {
+@media all and (min-width: 769px) and (max-width: 2559px), (min-width: 2560px)  {
   .display-4.hike-page-header {
-    font-size: 65px;
+    font-size: 5vw;
   }
 
   .display-5.hike-page-sub-header {
-    font-size: 35px;
+    font-size: 2vw;
   }
 
   .hike-infocard-container {
-    margin-left: 20vw;
+    margin-left: 33.5%;
+  }
+
+  .hike-info-card {
+    width: 20%
   }
 
   #hike-info-hike-icon {
@@ -280,14 +308,40 @@
   }
 
   .hike-info-title {
-    font-size: 33px;
+    font-size: 20px;
   }
 
   .hike-info {
-    font-size: 22px;
+    font-size: 15px;
     padding-left: 40px;
   }
 
+  .favorite-hike {
+    font-size: 18px;
+  }
+
+  .hike-image {
+    width: 45%;
+  }
+
+  .summary {
+    font-size: 1.5vw;
+  }
+}
+
+@media all and (min-width: 1441px) {
+  .favorite-hike {
+    font-size: 1.5vw;
+  }
+}
+
+@media all and (min-width: 2560px) {
+  .hike-infocard-container {
+    margin-left: 43%;
+  }
+  .hike-info-card {
+    width: 9%
+  }
 }
 
 /* ////////////////CONTAINERS////////////////////////*/
@@ -305,6 +359,11 @@
 .favorites-container {
   margin: 0 auto;
   width: 200px;
+}
+
+.favorite-hikes-container {
+  position: relative;
+  margin-left: 20px;
 }
 
 .favorites-list {
