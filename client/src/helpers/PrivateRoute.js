@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Redirect } from "react-router-dom";
-import { addAlertMessage } from '.././actions/alertsActions';
 
 export function PrivateRoute({ component: Component, ...rest }) {
   return (

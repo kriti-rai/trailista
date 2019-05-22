@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import FavoritesList from '.././components/Favorites/FavoritesList';
 import ClearAll from '.././components/Favorites/ClearAll';
 

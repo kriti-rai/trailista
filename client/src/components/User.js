@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { clearFavorites, deleteFavorite } from '.././actions/hikeUserActions';
 import FavoritesContainer from '.././containers/FavoritesContainer';

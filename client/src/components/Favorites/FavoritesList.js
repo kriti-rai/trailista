@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Favorite from './Favorite';
 
 function FavoritesList(props) {

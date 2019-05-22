@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { favorite } from '../.././actions/hikeUserActions';
-import Hike from './Hike';
 
 class HikeCard extends Component {
 

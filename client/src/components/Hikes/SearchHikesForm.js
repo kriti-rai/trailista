@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { CountryDropdown } from 'react-country-region-selector';
 
 const SearchHikesForm = (props) => {
