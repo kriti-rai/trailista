@@ -1,7 +1,7 @@
 {
   "name": "trailista",
   "engines": {
-    "node": "8.15.1"
+    "node": "11.12.0"
   },
   "scripts": {
     "build": "cd client && npm install && npm run build && cd ..",
