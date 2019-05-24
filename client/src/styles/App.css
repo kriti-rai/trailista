@@ -34,14 +34,16 @@
 
 .tab-title {
   color: grey;
+  font-size: 23px;
   font-family: 'Heebo', sans-serif;
 }
 
 .topnav {
   overflow: hidden;
-  background-color: #bfcd7e;
-  opacity: 4;
+  background-color: black;
+  opacity: 0.8;
 }
+
 
 .topnav a {
   float: left;
@@ -151,8 +153,8 @@ background-color: white;
 }
 
 #hiker-icon {
-  font-size: 20px;
-  color: rgb(36,170,157);
+  font-size: 23px;
+  color: #5c7658;
 }
 
 
@@ -176,7 +178,7 @@ background-color: rgba(0,0,0,0.5) !important;
 
 .about-msg {
   color: white;
-  
+
 }
 
 
@@ -200,14 +202,25 @@ min-height: 100vh;
 /* MOBILE SCREENS */
 @media screen and (max-width: 600px) {
   .navbar a:not(:nth-child(3)) {display: none;}
-  .app-title {font-size: 16px;}
+
+  .app-title {
+    font-size: 16px;
+  }
+
+  .tab-title {
+    font-size: 16px;
+  }
+
+  .navbar {
+    background-color: black;
+    opacity: 0.8;
+  }
+
   #navbarButton {
     float: right;
     display: block;
   }
-}
 
-@media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
   #navbarButton {
     position: absolute;

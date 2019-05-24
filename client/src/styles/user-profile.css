@@ -1,14 +1,33 @@
 img.profile-pic {
-  width: 200px;
-  height: 200px;
+  width: 175px;
+  height: 175px;
   border-radius: 50%;
+  margin-bottom: 15px;
 }
 
 .profile-container {
-  margin-top: 35px;
+  margin-top: 60px;
   margin-bottom: 25px;
 }
 
 .user-data {
   margin-top: 15px;
+}
+
+.username {
+  font-size: 35px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  color: #bfcd7e;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.user-location {
+  margin-left: 8px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.user-registration-date {
+  margin-bottom: 30px;
+  font-family: 'Open Sans', sans-serif;
 }
