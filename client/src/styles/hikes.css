@@ -15,28 +15,28 @@
 }
 
 /* Mobile */
-@media all and (min-width: 320px) and (max-width: 425px) {
+@media screen and (min-width: 320px) and (max-width: 425px) {
   .hike-card {
     width: 75%;
     margin: 5%;
   }
 }
 
-@media all and (min-width: 320px) and (max-width: 425px) {
+@media screen and (min-width: 320px) and (max-width: 425px) {
   .hikes-list {
     padding-left: 15%;
   }
 }
 
 /* Tablet */
-@media all and (min-width: 426px) and (max-width: 768px) {
+@media screen and (min-width: 426px) and (max-width: 768px) {
   .hike-card {
     width: 40%;
     margin: 4%;
   }
 }
 
-@media all and (min-width: 426px) and (max-width: 768px), (min-width: 769px) {
+@media screen and (min-width: 426px) and (max-width: 768px), (min-width: 769px) {
   .hikes-list {
     padding-left: 5%;
   }
@@ -112,7 +112,7 @@
 
 
 /* Mobile */
-@media all and (max-width: 425px){
+@media screen and (max-width: 425px){
   .search-hike-form {
     margin: 0 auto;
     width: 300px;
@@ -351,7 +351,7 @@
 
 @media all and (min-width: 1441px) {
   .favorite-hike {
-    font-size: 1.5vw;
+    font-size: 18px;
   }
 }
 
@@ -392,7 +392,7 @@
   text-align: justify;
   margin: 0 auto;
   width: 500px;
-  padding-left: 10%;
+  padding-left:9%;
 }
 
 /* ////////////////////////ADD HIKE TO FAVORITE/////////////////////// */
