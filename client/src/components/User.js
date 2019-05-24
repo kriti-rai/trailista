@@ -35,10 +35,10 @@ class User extends Component {
         <div className='profile-container'>
           <img className="profile-pic" src={ userImage } alt="profile-pic" />
           <div className='user-data'>
-            <h3><em>{currentUser.username}</em></h3>
+            <div className="username">{currentUser.username}</div>
             <h3>{ currentUser.firstName } { currentUser.lastName }</h3>
-            <p><i className="fas fa-map-marker-alt"></i> <small>{ currentUser.location }</small></p>
-            <p><small>Member since: { this.createdAt(currentUser.created_at) }</small></p>
+            <div><i id="location-icon"className="fas fa-map-marker-alt"></i><span className="user-location">{ currentUser.location }</span></div>
+            <div className="user-registration-date">Member since: { this.createdAt(currentUser.created_at) }</div>
             <hr></hr>
             <div className="favorites-container">
               <FavoritesContainer favHikes={ currentUser.hikes } token={ this.props.token } clearFavorites={ this.props.clearFavorites } deleteFavorite={ this.props.deleteFavorite } />

@@ -9,7 +9,7 @@ function Navbar(props) {
   if (logged_in) {
     showTabs = (
       <>
-        <NavLink to={ "/" + props.currentUser.username } activeClassName="selected-tab" className="nav-link"><span className="tab-tab-title">My Profile</span></NavLink>
+        <NavLink to={ "/" + props.currentUser.username } activeClassName="selected-tab" className="nav-link"><span className="tab-title">My Profile</span></NavLink>
         <NavLink to='/logout' activeClassName="selected-tab" className="nav-link"><span className="tab-title">Logout</span></NavLink>
       </>
     )
