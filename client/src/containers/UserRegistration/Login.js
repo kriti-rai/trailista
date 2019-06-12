@@ -39,7 +39,18 @@ class Login extends Component {
                     <input type="password" name="password" value={ this.state.password } className="form-control" placeholder="Password" onChange={ this.handleChange } />
                   </div>
                   <div className="form-group">
-                    <input className="button login_btn" type="submit" value="Login"/>
+                  <button id="login-btn" className="form-control" type="submit">Login</button>
+                  </div>
+                  <div className="signup-divider">
+                    <span className="divider-text">OR</span>
+                  </div>
+                  <div className="third-party-auth-container">
+                    <div className="form-group">
+                      <button id="google-signup" className="form-control" type="submit"><img id="google-icon" width="28" height="17" src="https://img.icons8.com/color/48/000000/google-logo.png"></img>Continue with Google</button>
+                    </div>
+                    <div className="form-group">
+                      <button id="fb-signup" className="form-control" type="submit"><i id="facebook-icon" className="fab fa-facebook-square"></i>Continue with Facebook</button>
+                    </div>
                   </div>
                 </form>
               </div>
