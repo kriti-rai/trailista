@@ -62,10 +62,10 @@ class Register extends Component {
                     </div>
                     <div className="third-party-auth-container">
                       <div className="form-group">
-                        <button id="google-signup" className="form-control" type="submit"><img id="google-icon" width="28" height="17" src="https://img.icons8.com/color/48/000000/google-logo.png"></img>Continue with Google</button>
+                        <button id="google-signup" className="form-control"><img id="google-icon" width="28" height="17" src="https://img.icons8.com/color/48/000000/google-logo.png"></img>Continue with Google</button>
                       </div>
                       <div className="form-group">
-                        <button id="fb-signup" className="form-control" type="submit"><i id="facebook-icon" className="fab fa-facebook-square"></i>Continue with Facebook</button>
+                        <button id="fb-signup" className="form-control"><i id="facebook-icon" className="fab fa-facebook-square"></i>Continue with Facebook</button>
                       </div>
                     </div>
                 </form>
