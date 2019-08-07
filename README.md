@@ -1,6 +1,6 @@
 # TRAILISTA
 
-Trailista (*or Trail-lister*) is a WIP that uses [The Hiking Project Data API](https://www.hikingproject.com/data) to extract hiking trails based on user's location input.
+Trailista is a React app that uses [The Hiking Project Data API](https://www.hikingproject.com/data) to extract hiking trails based on user's location input.
 
 ## Demo
 
