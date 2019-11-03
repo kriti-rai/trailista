@@ -1,0 +1,41 @@
+* {
+ box-sizing: border-box;
+}
+
+*:before,
+*:after {
+ box-sizing: border-box;
+}
+
+html,
+body {
+ height: 100%;
+ position: relative;
+}
+
+.main-container {
+ min-height: 100%; /* will cover the 100% of viewport */
+ display: block;
+ position: relative;
+}
+
+#root {
+  overflow: hidden;
+  padding-bottom: 2.5rem;
+  position: relative;
+  min-height: 100vh;
+}
+
+#footer {
+ position: relative;
+ margin-top: -2.5em;
+ clear: both;
+ bottom: 0;
+ width: 100%;
+ color: grey;
+ font-size: 14px;
+}
+
+.hyperlink {
+  color: inherit;
+}
